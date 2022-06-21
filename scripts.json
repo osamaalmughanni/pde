@@ -7,7 +7,7 @@
          "id":"0",
          "name":"Pinned Items",
          "slug":"pin",
-         "description":"Lorem ipsum..",
+         "description":"Hier findest du die Tools die du gerne verwendest 😇",
          "emoji":"📌"
       },
       {
@@ -21,7 +21,7 @@
          "id":"2",
          "name":"BIM Management",
          "slug":"bimmanagement",
-         "description":"Lorem ipsum..",
+         "description":"Wir sind noch dabei, tolle Tools für euer Team zu erstellen!",
          "emoji":"📑"
       }
    ],
