@@ -151,45 +151,6 @@
       "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "List.DropItems(List.DropItems(l1,3),-1);\nl1[[0,1,-1]];",
-      "Id": "4a23945958da48eb8d752a72899c640b",
-      "Inputs": [
-        {
-          "Id": "1706d0a4d20347388dab37852b7dd64a",
-          "Name": "l1",
-          "Description": "l1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "1f2e8abb9d98424fa6262c274ac7f442",
-          "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "0056956c0e1048de8084b91e695c83fc",
-          "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
-    },
-    {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
       "NodeType": "ExtensionNode",
       "Id": "62afe8e5a8b94ad1ba4ebbebe36df9fa",
@@ -221,12 +182,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "1;",
+      "Code": "0;",
       "Id": "90fd548fb80f40d19b3445537d497c5d",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "70e1af25ece64567be8293d2bd894bfe",
+          "Id": "22e4faaea2bc416b860d1cb5e118b1bf",
           "Name": "",
           "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
@@ -875,8 +836,8 @@
     },
     {
       "Start": "ba18a0721fee4921b21f5e1ca0857b70",
-      "End": "1706d0a4d20347388dab37852b7dd64a",
-      "Id": "4e4f450ba0b345b3b094f2c47906f38f"
+      "End": "84c161100f8b409abb340ca005b5f94a",
+      "Id": "e06f3dadd42549c89f9521115f9cb6ef"
     },
     {
       "Start": "6c1280e9283841cb88438b385a634f64",
@@ -889,11 +850,6 @@
       "Id": "4237cb0145f8481ba3f1b49444733f5a"
     },
     {
-      "Start": "1f2e8abb9d98424fa6262c274ac7f442",
-      "End": "84c161100f8b409abb340ca005b5f94a",
-      "Id": "24fd9dddf258463b845bb41d290320ce"
-    },
-    {
       "Start": "186f2245ae224302b5781ba1358a5639",
       "End": "0a1a3834c18245788be99e83cf9587c1",
       "Id": "03b8446a137d4fdfb7131ba3a265eca0"
@@ -904,14 +860,14 @@
       "Id": "14306f6b0c9e4f5a90b8ccd277860b72"
     },
     {
-      "Start": "70e1af25ece64567be8293d2bd894bfe",
+      "Start": "22e4faaea2bc416b860d1cb5e118b1bf",
       "End": "eb5cb8b1654f48648bd50721b6ea1e25",
-      "Id": "8679c0350469402eae6f91edd41005d6"
+      "Id": "2d949328326c4695a624d2aa97d46a2a"
     },
     {
-      "Start": "70e1af25ece64567be8293d2bd894bfe",
+      "Start": "22e4faaea2bc416b860d1cb5e118b1bf",
       "End": "7a56aaa4b10e438eb95352209375a50c",
-      "Id": "76007486b18c44a08c64b9a3852d87cd"
+      "Id": "2eb4f4cd97e344f68a718a17a229a04b"
     },
     {
       "Start": "3e87c230edd74401a69074d55fe43931",
@@ -1109,16 +1065,6 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "4a23945958da48eb8d752a72899c640b",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 767.60146753033689,
-        "Y": 172.57496111834945
-      },
-      {
-        "ShowGeometry": true,
         "Name": "Watch",
         "Id": "62afe8e5a8b94ad1ba4ebbebe36df9fa",
         "IsSetAsInput": false,
@@ -1309,8 +1255,8 @@
       }
     ],
     "Annotations": [],
-    "X": -41.332030610338222,
-    "Y": 220.11627806037535,
-    "Zoom": 0.20963156665607624
+    "X": -2153.9484270608427,
+    "Y": 226.76033568577424,
+    "Zoom": 1.1718916014792948
   }
 }
