@@ -1,0 +1,585 @@
+{
+  "Uuid": "7a545282-2f7e-4847-9a93-1fa935d45ad9",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "001",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#dynre*\r\n#orttvs\r\n#GetRoomArea\r\n\r\nimport clr\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\nclr.AddReference('RevitServices')\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n#converting\r\nelements = UnwrapElement(IN[0])\r\noutput = []\r\n\r\n#getting\r\nfor element in elements:\r\n\ta = element.get_Parameter(BuiltInParameter.ROOM_AREA).AsDouble()\r\n\toutput.append(a)\r\n\t\r\nOUT = output\r\n\r\n#dynre*",
+      "VariableInputPorts": true,
+      "Id": "ceba6ca0594d4c8890e5ba524c59b705",
+      "Inputs": [
+        {
+          "Id": "8bc158c28cb5463eb1d1b918297e00d4",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca42abe8a5114b4a92e2432d4bb027e2",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#dynre*\r\n#piuqdn\r\n#TaskDialog\r\n\r\nimport clr\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPIUI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.UI import TaskDialog\r\n\r\nmsgBox = TaskDialog\r\n\r\nif IN[3] == 0: OUT = msgBox.Show(IN[0], IN[1] + IN[2])\r\nelse: OUT = 0\r\n\r\n#dynre*",
+      "VariableInputPorts": true,
+      "Id": "e99dcaa09b1b438dbb5463a59deb914b",
+      "Inputs": [
+        {
+          "Id": "88466550f1004a56b256c6b3d061f691",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "da3eadb8156b4255ada62c0a7843b065",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7542297371e64851ae472c2fb85b01bc",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "331587656b9a403fa654194e491cb6c0",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7c759957a9454446a3f2e21afdc1ea1c",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.FromObject, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "4a29f4a8e80c4d8b88402101d4a40370",
+      "Inputs": [
+        {
+          "Id": "00a0e33ed23c46928b1015a035bd6a5c",
+          "Name": "obj",
+          "Description": "Zu serialisierendes Objekt",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b62bf2bc5ff9461fbfd903f29d1a9f3f",
+          "Name": "str",
+          "Description": "Ergebnis der mathematischen Berechnung",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Convert an object to a string representation."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.FromObject, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "007d3ac0cdd34fd995adeee1e482e4db",
+      "Inputs": [
+        {
+          "Id": "a3ab5eb60e5a4dec83fb227234082e2f",
+          "Name": "obj",
+          "Description": "Zu serialisierendes Objekt",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "953032ac6882481aa7e70e520d1ae571",
+          "Name": "str",
+          "Description": "Ergebnis der mathematischen Berechnung",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Convert an object to a string representation."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#dynre*\r\n#enzrnt\r\n#IsolatedPickModelElements\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom  Autodesk.Revit.UI import *\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\nsel1 = uidoc.Selection\r\nobt1 = Selection.ObjectType.Element\r\nclass CustomISelectionFilter(Selection.ISelectionFilter):\r\n\tdef __init__(self, nom_categorie):\r\n\t\tself.nom_categorie = nom_categorie\r\n\tdef AllowElement(self, e):\r\n\t\tif e.Category.Name == self.nom_categorie:\r\n\t\t\treturn True\r\n\t\telse:\r\n\t\t\treturn False\r\n\tdef AllowReference(self, ref, point):\r\n\t\treturn true\r\n\t\t\r\nel_ref = sel1.PickObjects(obt1, CustomISelectionFilter(IN[0]), 'Pick elements of category, ' + (IN[0]) + ' Press finish to complete.')\r\ntypelist = list()\r\nidlist = list()\r\nfor i in el_ref:\r\n\t\r\n\ttry:\r\n\t\ttypelist.append(doc.GetElement(i.ElementId))\r\n\texcept:\r\n\t\ttypelist.apped(list())\r\n\t\t\r\n\r\nOUT = typelist\r\n\r\n#dynre*",
+      "VariableInputPorts": true,
+      "Id": "a188a94e91df47d6b4f95371c2105059",
+      "Inputs": [
+        {
+          "Id": "9347b250ee8c4ee6a6e9ae3e2d2bd932",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "037595e616bf44adbb55e5e93e41793a",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "da7df71096a243c7b806ebe57cad9f59",
+      "Inputs": [
+        {
+          "Id": "af3345ab96a44e7db447ca1d6d1a198e",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0910d363a2184bd0b4d200b27ffcc190",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"OST_Rooms\";",
+      "Id": "d801da9f3ab5421e8a6d1e16886957e0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "74617747a6824b15945eddcad17eb7cc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Sum area\";",
+      "Id": "470549abed80487a99cccea09f4c7026",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bf87cbbc4ead43198641e4292fd2e431",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"m²\";",
+      "Id": "acc7251ec2d3458faad39bc4ca0e43d1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "04e38ac1434e41de9e7d548acae9bc0e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#dynre*\r\n#keqolr\r\n#ConvertFromInternalValuesToMeter(SQUAREMETERS)\r\n\r\nimport clr\r\nimport sys\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuiapp = DocumentManager.Instance.CurrentUIApplication\r\napp = uiapp.Application\r\n\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nimport System\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\t\r\nx = UnwrapElement(tolist(IN[0]))\r\noutput = []\r\n\r\nfor i in x :\r\n\tconvertfrom = UnitUtils.ConvertFromInternalUnits(i,UnitTypeId.SquareMeters)\r\n\toutput.append(convertfrom)\r\n\t\r\nOUT = output\r\n\r\n#dynre*",
+      "VariableInputPorts": true,
+      "Id": "ce8d75c1c35043129682fd46b6cc52b5",
+      "Inputs": [
+        {
+          "Id": "5979d6b6e55e4df990fdb0c7a3217a78",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "56aa5da1529c4160b511eab06920de7a",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Math.Sum@double[]",
+      "Id": "623703d06aa14595a206f100bb728924",
+      "Inputs": [
+        {
+          "Id": "d060dd7e0aff4f8b9ebab9f56bd3efd7",
+          "Name": "values",
+          "Description": "The numbers to sum\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2fc842e16be5420aaf408c20dbdb0a5e",
+          "Name": "sum",
+          "Description": "The sum of the values",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Find the sum of a series of numbers\n\nMath.Sum (values: double[]): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Object.IsNull@var",
+      "Id": "c5ad1f8ce1f9482fb47880fec6ffddd7",
+      "Inputs": [
+        {
+          "Id": "d4001b122f794300b96eb7a752bed4e3",
+          "Name": "obj",
+          "Description": "Object to test.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d428e8a18822414a997a83600fdaea66",
+          "Name": "bool",
+          "Description": "Whether object is null.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Determines the if the given object is null.\n\nObject.IsNull (obj: var): bool"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ca42abe8a5114b4a92e2432d4bb027e2",
+      "End": "5979d6b6e55e4df990fdb0c7a3217a78",
+      "Id": "3105aa648dfe4519be2596e86f829854"
+    },
+    {
+      "Start": "b62bf2bc5ff9461fbfd903f29d1a9f3f",
+      "End": "da3eadb8156b4255ada62c0a7843b065",
+      "Id": "c244d72cafd54bbbb6712b6f7580210a"
+    },
+    {
+      "Start": "953032ac6882481aa7e70e520d1ae571",
+      "End": "9347b250ee8c4ee6a6e9ae3e2d2bd932",
+      "Id": "41b6535983db4925b1f47057ab569d40"
+    },
+    {
+      "Start": "037595e616bf44adbb55e5e93e41793a",
+      "End": "8bc158c28cb5463eb1d1b918297e00d4",
+      "Id": "187600519cd842aba11cef20ca700300"
+    },
+    {
+      "Start": "0910d363a2184bd0b4d200b27ffcc190",
+      "End": "a3ab5eb60e5a4dec83fb227234082e2f",
+      "Id": "6bc6e17d34d145acaaefed30d6ddcb9d"
+    },
+    {
+      "Start": "74617747a6824b15945eddcad17eb7cc",
+      "End": "af3345ab96a44e7db447ca1d6d1a198e",
+      "Id": "e24c7fb0a2ec479ab7e487c6abe29e6f"
+    },
+    {
+      "Start": "bf87cbbc4ead43198641e4292fd2e431",
+      "End": "88466550f1004a56b256c6b3d061f691",
+      "Id": "0441bbf28ebb4776ae23b1aefe88ed61"
+    },
+    {
+      "Start": "04e38ac1434e41de9e7d548acae9bc0e",
+      "End": "7542297371e64851ae472c2fb85b01bc",
+      "Id": "d8b62588a59547c9ac6b7e05bbfef201"
+    },
+    {
+      "Start": "56aa5da1529c4160b511eab06920de7a",
+      "End": "d060dd7e0aff4f8b9ebab9f56bd3efd7",
+      "Id": "ffd283f09fc741f4944a4a05adaf6a7d"
+    },
+    {
+      "Start": "2fc842e16be5420aaf408c20dbdb0a5e",
+      "End": "00a0e33ed23c46928b1015a035bd6a5c",
+      "Id": "c33669070570436d84f3d0939abc1239"
+    },
+    {
+      "Start": "2fc842e16be5420aaf408c20dbdb0a5e",
+      "End": "d4001b122f794300b96eb7a752bed4e3",
+      "Id": "17bc38e6437a489b8b32aa3fe9bde245"
+    },
+    {
+      "Start": "d428e8a18822414a997a83600fdaea66",
+      "End": "331587656b9a403fa654194e491cb6c0",
+      "Id": "4f2ebb8d03c240b28a632311996d7171"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "ceba6ca0594d4c8890e5ba524c59b705",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 330.909265876114,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "e99dcaa09b1b438dbb5463a59deb914b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1572.5930437325449,
+        "Y": 205.56873278634518
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String from Object",
+        "Id": "4a29f4a8e80c4d8b88402101d4a40370",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1147.5135574331593,
+        "Y": 332.20717295297379
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String from Object",
+        "Id": "007d3ac0cdd34fd995adeee1e482e4db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -50.713302814523558,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "a188a94e91df47d6b4f95371c2105059",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 140.59798153079515,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "da7df71096a243c7b806ebe57cad9f59",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -325.02458715984227,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "d801da9f3ab5421e8a6d1e16886957e0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -490.73361250598208,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "470549abed80487a99cccea09f4c7026",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1342.1006305483909,
+        "Y": 66.755553683434016
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "acc7251ec2d3458faad39bc4ca0e43d1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1362.0,
+        "Y": 471.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "ce8d75c1c35043129682fd46b6cc52b5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 521.220550221433,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Math.Sum",
+        "Id": "623703d06aa14595a206f100bb728924",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 711.53183456675129,
+        "Y": 207.25914199853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Object.IsNull",
+        "Id": "c5ad1f8ce1f9482fb47880fec6ffddd7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1105.0857808690789,
+        "Y": 107.26524809623939
+      }
+    ],
+    "Annotations": [],
+    "X": -389.24426623204567,
+    "Y": -21.979696752914379,
+    "Zoom": 1.2192697888007085
+  }
+}
