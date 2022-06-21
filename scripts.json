@@ -29,7 +29,7 @@
       {
          "id":"513495",
          "categoryId":"2",
-         "name":"Startansicht — Daten Aktualisieren111",
+         "name":"Startansicht — Daten Aktualisieren",
          "description":"Aktualisiert alle Daten in der Startansicht beim MCI Projekt Zentralmodell und schickt sie als JSON weiter.",
          "author":"Osama Almughanni",
          "dyn":[
