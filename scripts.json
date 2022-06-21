@@ -43,23 +43,6 @@
          ]
       },
       {
-         "id":"653752",
-         "categoryId":"1",
-         "name":"Elements — reset graphic overrides",
-         "description":"With this tool you can reset all graphic overrides for all elements in the selected views.",
-         "author":"Osama Almughanni",
-         "url":"https://dynre.com/dynreworkspace/dyn/052.dyn",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
-         "dependencies":[
-            "Clockwork",
-            "dynaShapes"
-         ],
-         "projects":[
-         ]
-      },
-      {
          "id":"864742",
          "categoryId":"1",
          "name":"Rooms — sum area",
@@ -70,59 +53,6 @@
          "created":"01.01.1970 01:00",
          "modified":"01.01.1970 01:00",
          "dependencies":[
-            "Clockwork",
-            "dynaShapes"
-         ],
-         "projects":[
-         ]
-      },
-      {
-         "id":"784322",
-         "categoryId":"1",
-         "name":"Elements — match overrides in active view",
-         "description":"Matching all override settings from one element to other multiple elements in different active views.",
-         "author":"Test",
-         "url":"https://dynre.com/dynreworkspace/dyn/040.dyn",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
-         "dependencies":[
-            "Clockwork",
-            "dynaShapes"
-         ],
-         "projects":[
-         ]
-      },
-      {
-         "id":"856322",
-         "categoryId":"2",
-         "name":"Filenames — search for and replace with",
-         "description":"Filenames — search for and replace with",
-         "author":"Osama Almughanni",
-         "url":"https://dynre.com/dynreworkspace/dyn/048.dyn",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
-         "dependencies":[
-            "Clockwork",
-            "dynaShapes"
-         ],
-         "projects":[
-         ]
-      },
-      {
-         "id":"964542",
-         "categoryId":"1",
-         "name":"Rooms — find all not tagged",
-         "description":"This tool shows you the rooms that are still not tagged in the active view.",
-         "author":"Osama Almughanni",
-         "url":"https://dynre.com/dynreworkspace/dyn/050.dyn",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
-         "dependencies":[
-            "Clockwork",
-            "dynaShapes"
          ],
          "projects":[
          ]
@@ -133,15 +63,14 @@
          "name":"Schedules — Export current schedule to .xlsx",
          "description":"For MCI only. This tool exports the current schedule to an existing .xlsx file. Open the schedule view before running this tool.",
          "author":"Osama Almughanni",
-         "url":"https://dynre.osamaalmughanni.com/dyn/569124/script.dyn",
+         "url":"https://raw.githubusercontent.com/osamaalmughanni/dynre.github.io/main/dyn/569124/script.dyn",
          "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
          "created":"01.01.1970 01:00",
          "modified":"01.01.1970 01:00",
          "dependencies":[
-            "Clockwork",
-            "dynaShapes"
          ],
          "projects":[
+            "1001 MCI"
          ]
       }
    ]
