@@ -130,12 +130,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"Please open a schedule first.\";",
+      "Code": "\"Please open a schedule view first!\";",
       "Id": "e08b08acca66478d8f09d1c06479b309",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "c4d4ae37ede14645af9d24a2f21b3ff4",
+          "Id": "b46108f0a0d34e21a6a0c13a4a9f64a6",
           "Name": "",
           "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
@@ -200,7 +200,7 @@
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "import clr\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom Autodesk.Revit.UI import *\r\n\r\nif IN[0] == False:\r\n\tTaskDialog.Show(\"Title\", IN[1])\r\n\tOUT = False\r\nelse:\r\n\tOUT = True",
+      "Code": "import clr\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom Autodesk.Revit.UI import *\r\n\r\nif IN[0] == False:\r\n\tTaskDialog.Show(\"Schedule Export\", IN[1])\r\n\tOUT = False\r\nelse:\r\n\tOUT = True",
       "Engine": "IronPython2",
       "VariableInputPorts": true,
       "Id": "f85e30b999794dc9b9cacb5002318b4b",
@@ -649,9 +649,9 @@
       "Id": "17437486964a49a78a50b08dfbeb60da"
     },
     {
-      "Start": "c4d4ae37ede14645af9d24a2f21b3ff4",
+      "Start": "b46108f0a0d34e21a6a0c13a4a9f64a6",
       "End": "600c37861a3d4bb0af716c51bafe5ce8",
-      "Id": "3da94c1d128d4ab0bccb1ab847ac4c08"
+      "Id": "f2112a9104db445f93e8ff669c660055"
     },
     {
       "Start": "1fc1c6725d484d3eb6b33554fd8db0c7",
@@ -996,7 +996,7 @@
         "Height": 342.78285767552984,
         "FontSize": 24.0,
         "InitialTop": 1184.79223604575,
-        "InitialHeight": 333.78285767552984,
+        "InitialHeight": 355.78285767552984,
         "TextblockHeight": 29.0,
         "Background": "#FFFFA07A"
       },
@@ -1020,13 +1020,13 @@
         "Height": 707.954943229308,
         "FontSize": 24.0,
         "InitialTop": 738.045056770692,
-        "InitialHeight": 698.954943229308,
+        "InitialHeight": 720.954943229308,
         "TextblockHeight": 29.0,
         "Background": "#FF90EE90"
       }
     ],
-    "X": -1454.1642490197937,
-    "Y": -582.84946592183792,
-    "Zoom": 0.72106635603597624
+    "X": 68.597790403463591,
+    "Y": 27.475348101744515,
+    "Zoom": 0.29939842086206
   }
 }
