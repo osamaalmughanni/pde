@@ -29,7 +29,7 @@
       {
          "id":"513495",
          "categoryId":"2",
-         "name":"Startansicht — Daten Aktualisieren",
+         "name":"Startansicht — Daten Aktualisieren XXXX",
          "description":"Aktualisiert alle Daten in der Startansicht beim MCI Projekt Zentralmodell und schickt sie als JSON weiter.",
          "author":"Osama Almughanni",
          "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
@@ -47,6 +47,23 @@
          ]
       },
       {
+         "id":"864742",
+         "categoryId":"1",
+         "name":"Rooms — sum area",
+         "description":"Calculating the sum of the area of selected rooms for a quick check.",
+         "author":"Osama Almughanni",
+         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
+         "created":"01.01.1970 01:00",
+         "modified":"01.01.1970 01:00",
+         "dyn":[
+            "dyn/864742/script.dyn"
+         ],
+         "dependencies":[
+         ],
+         "projects":[
+         ]
+      },
+        {
          "id":"864742",
          "categoryId":"1",
          "name":"Rooms — sum area",
