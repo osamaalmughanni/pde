@@ -30,20 +30,18 @@
          "id":"513495",
          "categoryId":"2",
          "name":"Startansicht — Daten Aktualisieren",
-         "description":"Aktualisiert alle Daten in der Startansicht beim MCI Projekt Zentralmodell und schickt sie als JSON weiter.",
+         "description":"Aktualisiert alle Modelldaten in der Startansicht. Das Tool ist noch in Arbeit und wird weiterentwickelt.",
          "author":"Osama Almughanni",
          "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
          "created":"11.06.2022",
          "modified":"11.06.2022",
          "dyn":[
             "dyn/513495/001-Refresh-Dashboard.dyn",
-            "dyn/513495/002-Refresh-Dashboard-Values.dyn",
             "dyn/513495/lastCheck.dyn"
          ],
          "dependencies":[
          ],
          "projects":[
-            "1001 MCI"
          ]
       },
       {
