@@ -2,7 +2,7 @@
   "Uuid": "35c4669c-c269-448c-ab2d-c948796d7a2c",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "save excel v2",
+  "Name": "script",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -39,54 +39,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Logic.RefactoredIf, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "2826ad8896fd4b91a0092863179847db",
-      "Inputs": [
-        {
-          "Id": "25579e845e764f2d9e60c9254164ed9f",
-          "Name": "test",
-          "Description": "Boolescher Test",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bab3d2cd507742e8ac1a33dc78052edf",
-          "Name": "true",
-          "Description": "Wird zurückgegeben, wenn Test true ist",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e372e57270fc4f6d94db8f2a9b7e91c6",
-          "Name": "false",
-          "Description": "Wird zurückgegeben, wenn Test false ist",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "a3ed1819a6b84dac9feedeca53d2e4da",
-          "Name": "result",
-          "Description": "Ergebnisblock erstellt",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Gibt abhängig von der Auswahl des booleschen Werts in der Testeingabe das Ergebnis für die True- oder False-Eingabe zurück."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -97,7 +50,7 @@
         {
           "Id": "765152f8c6e14f5b933e179ce1a0a255",
           "Name": "x",
-          "Description": "Basistypobjekt für den Vergleich (z. B. bool, int, double, string usw.)\n\nvar[]..[]",
+          "Description": "x value.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -106,7 +59,7 @@
         {
           "Id": "0bb7f005745f48f78a24191a537172a0",
           "Name": "y",
-          "Description": "Basistypobjekt für den Vergleich (z. B. bool, int, double, string usw.)\n\nvar[]..[]",
+          "Description": "y value.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -116,8 +69,8 @@
       "Outputs": [
         {
           "Id": "f5d4e812e82e4a9f92eb2ce276a7e4c8",
-          "Name": "bool",
-          "Description": "Ergebnis der Gleichheitsprüfung",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -125,7 +78,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Vergleicht, ob x und y gleich sind\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -137,7 +90,7 @@
         {
           "Id": "b46108f0a0d34e21a6a0c13a4a9f64a6",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -145,7 +98,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -155,8 +108,8 @@
       "Inputs": [
         {
           "Id": "14b420fdf63041269e05bb333ed31479",
-          "Name": "object",
-          "Description": "Objekt, von dem der Typ abgerufen wird\n\nvar",
+          "Name": "obj",
+          "Description": "An object.\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -167,7 +120,7 @@
         {
           "Id": "1fc1c6725d484d3eb6b33554fd8db0c7",
           "Name": "string",
-          "Description": "Typ des Objekts",
+          "Description": "Type of object.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -175,7 +128,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Gibt den Typ des Objekts als Zeichenfolge zurück.\n\nObject.Type (object: var): string"
+      "Description": "Returns the type of object represented as string.\n\nObject.Type (obj: var): string"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -187,7 +140,7 @@
         {
           "Id": "aa07f46799a849f39304585dd8c15038",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -195,7 +148,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -236,7 +189,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -268,7 +221,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -280,7 +233,7 @@
         {
           "Id": "3a8049bb9ce24554866bae4bb4919d86",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -288,7 +241,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -300,7 +253,7 @@
         {
           "Id": "77a50ac7d2204dea8e1c19be6cbf6c83",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -308,7 +261,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -385,7 +338,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -414,7 +367,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Visualisierung der Ausgabe des Blocks"
+      "Description": "Visualize the output of node."
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -446,7 +399,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -458,7 +411,7 @@
         {
           "Id": "3d43eb35c5544808b795b14c3757dc0c",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -466,7 +419,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -498,54 +451,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Führt ein eingebettetes Python-Skript aus."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Logic.RefactoredIf, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "f4b5af1e5c9442e8babcec25fcf3036f",
-      "Inputs": [
-        {
-          "Id": "26d55e7984c945e488ae584a87f44652",
-          "Name": "test",
-          "Description": "Boolescher Test",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4e740a92eb26495382368821be94f9d8",
-          "Name": "true",
-          "Description": "Wird zurückgegeben, wenn Test true ist",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "21d560b60ef34940971451f57511d2a9",
-          "Name": "false",
-          "Description": "Wird zurückgegeben, wenn Test false ist",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "5c5870ee739046b28d23fe7b5052687c",
-          "Name": "result",
-          "Description": "Ergebnisblock erstellt",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Gibt abhängig von der Auswahl des booleschen Werts in der Testeingabe das Ergebnis für die True- oder False-Eingabe zurück."
+      "Description": "Runs an embedded Python script."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -556,7 +462,7 @@
         {
           "Id": "1ed4f8c8ce284aadbaf64213bd92fac4",
           "Name": "x",
-          "Description": "Basistypobjekt für den Vergleich (z. B. bool, int, double, string usw.)\n\nvar[]..[]",
+          "Description": "x value.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -565,7 +471,7 @@
         {
           "Id": "d4be2d501e554d62bb6fcc23a49c7501",
           "Name": "y",
-          "Description": "Basistypobjekt für den Vergleich (z. B. bool, int, double, string usw.)\n\nvar[]..[]",
+          "Description": "y value.\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -575,8 +481,8 @@
       "Outputs": [
         {
           "Id": "f59cb7f807624c759b7e58cf9a6cedd0",
-          "Name": "bool",
-          "Description": "Ergebnis der Gleichheitsprüfung",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -584,7 +490,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Vergleicht, ob x und y gleich sind\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -596,7 +502,7 @@
         {
           "Id": "adf4452c1c004506a2c9ecc30c7ed8d5",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -604,7 +510,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -616,7 +522,7 @@
         {
           "Id": "500d8a543af34f97a8c6ca2d403ad363",
           "Name": "",
-          "Description": "Wert des Ausdrucks in Zeile 1",
+          "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -624,7 +530,101 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Logic.If, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "1376118c4e2d4ac7bb6934c19cb7a48c",
+      "Inputs": [
+        {
+          "Id": "c4d1f71892e3423a840fcea6948935e2",
+          "Name": "test",
+          "Description": "Boolean test",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e84d7aa17c2a41178bdba3301bad944a",
+          "Name": "true",
+          "Description": "Returned if test is true",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f46b968e9c3b45d886f5c147a0051310",
+          "Name": "false",
+          "Description": "Returned if test is false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5eba3aaef444b1a8c781a4bfa79e508",
+          "Name": "result",
+          "Description": "Result block produced",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Conditional statement"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Logic.If, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "c0318f9bc4314fbda6f96e3bf9f2c2f5",
+      "Inputs": [
+        {
+          "Id": "53dd3d88a3c94f709a75917590d9f9ab",
+          "Name": "test",
+          "Description": "Boolean test",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f3a109aa7eb74420b2caa657666cab78",
+          "Name": "true",
+          "Description": "Returned if test is true",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "177ecf9b3c44407f9ad263721ccecdf6",
+          "Name": "false",
+          "Description": "Returned if test is false",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fdc2c82a65964ffba8ecbc242b17dd9b",
+          "Name": "result",
+          "Description": "Result block produced",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Conditional statement"
     }
   ],
   "Connectors": [
@@ -634,19 +634,9 @@
       "Id": "a6865f251505421c9db6011adb009df1"
     },
     {
-      "Start": "a3ed1819a6b84dac9feedeca53d2e4da",
-      "End": "8504754240254bf59de081d262ca5125",
-      "Id": "41ca7595160241a2b1f2f31b0afc7282"
-    },
-    {
-      "Start": "a3ed1819a6b84dac9feedeca53d2e4da",
-      "End": "2c65a30a92bc4aa6a455a83d0c4e683f",
-      "Id": "26e51533e83b4660a63009331399329e"
-    },
-    {
       "Start": "f5d4e812e82e4a9f92eb2ce276a7e4c8",
-      "End": "25579e845e764f2d9e60c9254164ed9f",
-      "Id": "17437486964a49a78a50b08dfbeb60da"
+      "End": "c4d1f71892e3423a840fcea6948935e2",
+      "Id": "30baae77bf4a476787870258fca9bd99"
     },
     {
       "Start": "b46108f0a0d34e21a6a0c13a4a9f64a6",
@@ -675,18 +665,18 @@
     },
     {
       "Start": "ed75fe21eee8417dbbe5db660a0a2de4",
-      "End": "bab3d2cd507742e8ac1a33dc78052edf",
-      "Id": "0892a87c9a0948c38e8671124995fed0"
-    },
-    {
-      "Start": "ed75fe21eee8417dbbe5db660a0a2de4",
       "End": "14b420fdf63041269e05bb333ed31479",
       "Id": "6864e697eeb74bf88f61d29a24d3f29d"
     },
     {
+      "Start": "ed75fe21eee8417dbbe5db660a0a2de4",
+      "End": "e84d7aa17c2a41178bdba3301bad944a",
+      "Id": "365fac4763534f70bfb5789220485e0d"
+    },
+    {
       "Start": "3a8049bb9ce24554866bae4bb4919d86",
-      "End": "e372e57270fc4f6d94db8f2a9b7e91c6",
-      "Id": "b1e88bfd249d424796aeb5069f5da5f2"
+      "End": "f46b968e9c3b45d886f5c147a0051310",
+      "Id": "133307fa039345348e675dd4ad254e29"
     },
     {
       "Start": "77a50ac7d2204dea8e1c19be6cbf6c83",
@@ -710,8 +700,8 @@
     },
     {
       "Start": "3d43eb35c5544808b795b14c3757dc0c",
-      "End": "4e740a92eb26495382368821be94f9d8",
-      "Id": "0f678ea88c9143209be14ebad94fe0b7"
+      "End": "f3a109aa7eb74420b2caa657666cab78",
+      "Id": "308c560831414959a18d19465070db60"
     },
     {
       "Start": "3c92ab2d819b4fe6aa5ddebc0b278b19",
@@ -719,14 +709,9 @@
       "Id": "f4cada111a4c4f1996230285ee40960f"
     },
     {
-      "Start": "5c5870ee739046b28d23fe7b5052687c",
-      "End": "fe8003641d9a4977b6a3705a8b434f64",
-      "Id": "b63dd21df9f44e0bb583246a00221596"
-    },
-    {
       "Start": "f59cb7f807624c759b7e58cf9a6cedd0",
-      "End": "26d55e7984c945e488ae584a87f44652",
-      "Id": "76faca11ddab4621955943eaff3f3ce0"
+      "End": "53dd3d88a3c94f709a75917590d9f9ab",
+      "Id": "2ac168d1b4474d99b39a8720857d7c0d"
     },
     {
       "Start": "adf4452c1c004506a2c9ecc30c7ed8d5",
@@ -735,47 +720,39 @@
     },
     {
       "Start": "500d8a543af34f97a8c6ca2d403ad363",
-      "End": "21d560b60ef34940971451f57511d2a9",
-      "Id": "7d1835bae21e42dcb94e29f07bf67b4a"
+      "End": "177ecf9b3c44407f9ad263721ccecdf6",
+      "Id": "38902292f5f7443c82f5384fb9150013"
+    },
+    {
+      "Start": "f5eba3aaef444b1a8c781a4bfa79e508",
+      "End": "8504754240254bf59de081d262ca5125",
+      "Id": "554b45977aed4c33beedaec437c12baf"
+    },
+    {
+      "Start": "f5eba3aaef444b1a8c781a4bfa79e508",
+      "End": "2c65a30a92bc4aa6a455a83d0c4e683f",
+      "Id": "b855ddd0739f46e6b90cb21a95b0571f"
+    },
+    {
+      "Start": "fdc2c82a65964ffba8ecbc242b17dd9b",
+      "End": "fe8003641d9a4977b6a3705a8b434f64",
+      "Id": "e734c64cd58b426bbfb635a84a17f051"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [],
-  "Thumbnail": "",
-  "GraphDocumentationURL": null,
-  "ExtensionWorkspaceData": [
-    {
-      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
-      "Name": "Properties",
-      "Version": "2.12",
-      "Data": {}
-    },
-    {
-      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
-      "Name": "Generative Design",
-      "Version": "1.10",
-      "Data": {}
-    }
-  ],
-  "Author": "",
-  "Linting": {
-    "activeLinter": "Keine",
-    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
-    "warningCount": 0,
-    "errorCount": 0
-  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.12.0.5650",
+      "Version": "2.10.1.3976",
       "RunType": "Automatic",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Hintergrundvorschau",
+      "Name": "Background Preview",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -795,16 +772,6 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 1490.75929729982,
-        "Y": 959.236585558958
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "If",
-        "Id": "2826ad8896fd4b91a0092863179847db",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1123.80709558663,
         "Y": 959.236585558958
       },
       {
@@ -939,16 +906,6 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "If",
-        "Id": "f4b5af1e5c9442e8babcec25fcf3036f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 3075.39260000111,
-        "Y": 1184.79223604575
-      },
-      {
-        "ShowGeometry": true,
         "Name": "==",
         "Id": "6b7ddf5ef42d4053ad94aa996a3607fe",
         "IsSetAsInput": false,
@@ -976,6 +933,26 @@
         "Excluded": false,
         "X": 2814.14293917682,
         "Y": 1395.57509372128
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "If",
+        "Id": "1376118c4e2d4ac7bb6934c19cb7a48c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1162.7699908520306,
+        "Y": 997.42616538395964
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "If",
+        "Id": "c0318f9bc4314fbda6f96e3bf9f2c2f5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3077.9021884567951,
+        "Y": 1236.2090254895752
       }
     ],
     "Annotations": [
@@ -985,48 +962,47 @@
         "Nodes": [
           "f764bd24b88842209a3abc15126fb9e4",
           "4b9d23f5802e4d91893d4585b9ca3fc1",
-          "f4b5af1e5c9442e8babcec25fcf3036f",
           "6b7ddf5ef42d4053ad94aa996a3607fe",
           "e320ecf525a641fab502216376e77566",
           "be17cc2624d9467d8821ef47f46cb9c9"
         ],
         "Left": 2445.21053786796,
-        "Top": 1145.79223604575,
-        "Width": 822.18206213315034,
-        "Height": 342.78285767552984,
+        "Top": 1116.79223604575,
+        "Width": 519.93240130886034,
+        "Height": 371.78285767552984,
         "FontSize": 24.0,
         "InitialTop": 1184.79223604575,
         "InitialHeight": 355.78285767552984,
-        "TextblockHeight": 29.0,
+        "TextblockHeight": 58.0,
         "Background": "#FFFFA07A"
       },
       {
-        "Id": "8c7f2577671141b989097f02c03d825c",
+        "Id": "083e9c5a562445c4baae5ac113bc464a",
         "Title": "Check if the current view is a schedule",
         "Nodes": [
           "d577fe5e96c54ca48e0365c7f680dcf5",
-          "2826ad8896fd4b91a0092863179847db",
           "cab3fca13a4c48a5b9625782015d343d",
           "e08b08acca66478d8f09d1c06479b309",
           "14d3727e9f7d4857a02f44ccb36b746b",
           "52ae8788e0a04c6e9abd482784d3ce56",
           "f85e30b999794dc9b9cacb5002318b4b",
           "cbe677818a004a8e9bf1a2c1bc1efc4c",
-          "46f44f8c9b4b464ea6197c45baaffa65"
+          "46f44f8c9b4b464ea6197c45baaffa65",
+          "1376118c4e2d4ac7bb6934c19cb7a48c"
         ],
         "Left": 292.249565063638,
-        "Top": 699.045056770692,
+        "Top": 685.045056770692,
         "Width": 1332.5097322361821,
-        "Height": 707.954943229308,
-        "FontSize": 24.0,
+        "Height": 721.954943229308,
+        "FontSize": 36.0,
         "InitialTop": 738.045056770692,
         "InitialHeight": 720.954943229308,
-        "TextblockHeight": 29.0,
-        "Background": "#FF90EE90"
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": 68.597790403463591,
-    "Y": 27.475348101744515,
-    "Zoom": 0.29939842086206
+    "X": -895.73569487840746,
+    "Y": -166.91391959510918,
+    "Zoom": 0.36835376449715812
   }
 }
