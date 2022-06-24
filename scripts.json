@@ -45,6 +45,24 @@
          ]
       },
       {
+         "id":"569124",
+         "categoryId":"1",
+         "name":"Schedules — Export to Excel",
+         "description":"This tool exports the current schedule to an existing .xlsx file. Open a schedule view first before running this tool.",
+         "author":"Osama Almughanni",
+         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
+         "created":"01.01.1970 01:00",
+         "modified":"01.01.1970 01:00",
+         "dyn":[
+            "dyn/569124/script.dyn"
+         ],
+         "dependencies":[
+         ],
+         "projects":[
+            "1001 MCI"
+         ]
+      },
+       {
          "id":"864742",
          "categoryId":"1",
          "name":"Rooms — sum area",
@@ -62,21 +80,20 @@
          ]
       },
       {
-         "id":"569124",
+         "id":"565789",
          "categoryId":"1",
-         "name":"Schedules — Export to Excel",
-         "description":"This tool exports the current schedule to an existing .xlsx file. Open a schedule view first before running this tool.",
+         "name":"Elements — get element id",
+         "description":"Getting the element id and copy its value to the clipboard. Used for a better communication within the team.",
          "author":"Osama Almughanni",
          "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
          "created":"01.01.1970 01:00",
          "modified":"01.01.1970 01:00",
          "dyn":[
-            "dyn/569124/script.dyn"
+            "dyn/565789/script.dyn"
          ],
          "dependencies":[
          ],
          "projects":[
-            "1001 MCI"
          ]
       }
    ]
