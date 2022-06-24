@@ -81,7 +81,7 @@
       },
       {
          "id":"565789",
-         "categoryId":"1",
+         "categoryId":"2",
          "name":"Elements — get element id",
          "description":"Getting the element id and copy its value to the clipboard. Used for a better communication within the team.",
          "author":"Osama Almughanni",
