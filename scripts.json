@@ -6,21 +6,18 @@
       {
          "id":"0",
          "name":"Pinned Items",
-         "slug":"pin",
          "description":"Hier findest du die Tools die du gerne verwendest 😇",
          "emoji":"📌"
       },
       {
          "id":"1",
          "name":"Architektur",
-         "slug":"architektur",
          "description":"Folgende Tools sind für Architektur gedacht. Brauchst du noch auch zusätzliche Tools? schreib uns und wir werden uns bemühen 🤠",
          "emoji":"🏬"
       },
       {
          "id":"2",
          "name":"BIM Management",
-         "slug":"bimmanagement",
          "description":"Wir sind noch dabei, tolle Tools für euer Team zu erstellen!",
          "emoji":"🥑"
       }
