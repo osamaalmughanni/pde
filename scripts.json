@@ -33,10 +33,6 @@
          "dyn":[
             "dyn/513495/001-Refresh-Dashboard.dyn",
             "dyn/513495/lastCheck.dyn"
-         ],
-         "dependencies":[
-         ],
-         "projects":[
          ]
       },
       {
@@ -48,7 +44,7 @@
          "created":"22.06.2022",
          "dyn":[
             "dyn/569124/script.dyn"
-         ]
+         ],
          "projects":[
             "1001 MCI"
          ]
