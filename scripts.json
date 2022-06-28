@@ -5,7 +5,7 @@
    "categories":[
       {
          "id":"0",
-         "name":"Pinned Items",
+         "name":"Gepinnte Tools",
          "description":"Hier findest du die Tools die du gerne verwendest 😇",
          "emoji":"📌"
       },
@@ -29,9 +29,7 @@
          "name":"Startansicht — Daten Aktualisieren",
          "description":"Aktualisiert alle Modelldaten in der Startansicht. Das Tool ist noch in Arbeit und Weiterentwiklung.",
          "author":"Osama Almughanni",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
          "created":"11.06.2022",
-         "modified":"11.06.2022",
          "dyn":[
             "dyn/513495/001-Refresh-Dashboard.dyn",
             "dyn/513495/lastCheck.dyn"
@@ -44,17 +42,13 @@
       {
          "id":"569124",
          "categoryId":"1",
-         "name":"Schedules — Export to Excel",
-         "description":"This tool exports the current schedule to an existing .xlsx file. Open a schedule view first before running this tool.",
+         "name":"Bauteillisten — als .xlsx Exportieren",
+         "description":"Dieses Tool exportiert alle Daten innerhalb einer Bauteilliste zu einer Excel Datei.",
          "author":"Osama Almughanni",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
+         "created":"22.06.2022",
          "dyn":[
             "dyn/569124/script.dyn"
-         ],
-         "dependencies":[
-         ],
+         ]
          "projects":[
             "1001 MCI"
          ]
@@ -62,35 +56,23 @@
        {
          "id":"864742",
          "categoryId":"1",
-         "name":"Rooms — sum area",
-         "description":"Calculating the sum of the area of selected rooms for a quick check.",
+         "name":"Räume — Summe Flächen",
+         "description":"Rechnet die Summe aller Flächen der gewählten Räume.",
          "author":"Osama Almughanni",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
+         "created":"12.06.2019",
          "dyn":[
             "dyn/864742/script.dyn"
-         ],
-         "dependencies":[
-         ],
-         "projects":[
          ]
       },
       {
          "id":"565789",
          "categoryId":"2",
-         "name":"Elements — get element id",
-         "description":"Getting the element id and copy its value to the clipboard. Used for a better communication within the team.",
+         "name":"Elemente — Element ID Kopieren",
+         "description":"Kopiert die ID Nummer eines Elements in Revit. Wird für Kommunikationszwecke meistens verwendet.",
          "author":"Osama Almughanni",
-         "tutorial":"https://www.youtube.com/watch?v=u_qy8ugN9SA",
-         "created":"01.01.1970 01:00",
-         "modified":"01.01.1970 01:00",
+         "created":"16.06.2020",
          "dyn":[
             "dyn/565789/script.dyn"
-         ],
-         "dependencies":[
-         ],
-         "projects":[
          ]
       }
    ]
