@@ -6,19 +6,19 @@
       {
          "id":"0",
          "name":"Gepinnte Tools",
-         "description":"Hier findest du die Tools die du gerne verwendest 😇",
+         "description":"Hier findest du die Skripte, die du gerne verwendest 😇",
          "emoji":"📌"
       },
       {
          "id":"1",
          "name":"Architektur",
-         "description":"Folgende Tools sind für Architektur gedacht. Brauchst du noch auch zusätzliche Tools? schreib uns und wir werden uns bemühen 🤠",
+         "description":"Folgende Skripte sind für Architektur gedacht. Brauchst du noch auch zusätzlich was? schreib uns und wir werden uns bemühen 🤠",
          "emoji":"🍍"
       },
       {
          "id":"2",
          "name":"BIM Management",
-         "description":"Wir sind noch dabei, tolle Tools für euer Team zu erstellen!",
+         "description":"Wir sind noch dabei, tolle Skripte für euer Team zu erstellen!",
          "emoji":"🥑"
       }
    ],
