@@ -89,6 +89,130 @@
       ],
       "Replication": "Disabled",
       "Description": "Auswahl zwischen True und False"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\nimport msvcrt\r\n\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom  Autodesk.Revit.UI import *\r\n\r\nTaskDialog.Show('Ausgeblendete Elemente einblenden',IN[0])\r\n\t\t\r\nOUT = IN[0]",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "85938c4dddd34622ac771a2eda34f8f8",
+      "Inputs": [
+        {
+          "Id": "d256ecb0364f428083488dae0c079918",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7975ace24634a49b1adf772fb3d62a2",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\ndef output1(l1):\r\n\tif len(l1) == 1: return l1[0]\r\n\telse: return l1\r\n\r\nnum1 = tolist(IN[0])\r\nout1 = []\r\nfor i in xrange(len(num1)):\r\n\ts1 = str(num1[i])\r\n\tif s1[-2:] == \".0\": out1.append(s1[:-2])\r\n\telse: out1.append(s1)\r\n\r\nOUT = output1(out1)",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "da689ff289de43178a99836bb9de4930",
+      "Inputs": [
+        {
+          "Id": "24777894af524165b5fb1499d19c6423",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "98abf291ba3844b088f57c1e79279b95",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "440c8fcb3bd44ed4a00d59893eaae52c",
+      "Inputs": [
+        {
+          "Id": "1189b1f7fa984353b752c1e56484af23",
+          "Name": "list",
+          "Description": "Liste, deren Elementanzahl abgerufen werden soll\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "da34641580334c84ae899a71c45d263b",
+          "Name": "int",
+          "Description": "Länge der Liste",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt die Anzahl der Elemente in der angegebenen Liste zurück.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"(\" + a + \") Elemente wurden wieder eingeblendet.\";",
+      "Id": "eb101f1269b64a3093fd291c0279b47e",
+      "Inputs": [
+        {
+          "Id": "06b5a2a273614ae29184bcb8f6b0f708",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "afa93e4318b2457490fad2c03d7d8daa",
+          "Name": "",
+          "Description": "Wert des Ausdrucks in Zeile 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     }
   ],
   "Connectors": [
@@ -98,14 +222,34 @@
       "Id": "633db036341f49c2ad7f1e0cefd17f30"
     },
     {
+      "Start": "5d88f610e07c41af9bbc723e34a3878a",
+      "End": "1189b1f7fa984353b752c1e56484af23",
+      "Id": "cd5cfb3ddc924ced95415bffe2e64424"
+    },
+    {
       "Start": "9c6ebb756bd14be1ada72049f191afdc",
       "End": "863dc6879e21466eb984eb7057677e97",
       "Id": "721b0cd48fbb4222a95cf56a10a582ad"
+    },
+    {
+      "Start": "98abf291ba3844b088f57c1e79279b95",
+      "End": "06b5a2a273614ae29184bcb8f6b0f708",
+      "Id": "8060ab78d6ee42a5a90f147084428023"
+    },
+    {
+      "Start": "da34641580334c84ae899a71c45d263b",
+      "End": "24777894af524165b5fb1499d19c6423",
+      "Id": "f669c8f9c23d4933828ef3f1bd802d98"
+    },
+    {
+      "Start": "afa93e4318b2457490fad2c03d7d8daa",
+      "End": "d256ecb0364f428083488dae0c079918",
+      "Id": "4a27a2fd37fa481f8a38cf11e4ec651d"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -158,7 +302,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 21.911605945016731,
+        "X": 21.9116059450167,
         "Y": 44.9726130554094
       },
       {
@@ -168,8 +312,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 434.54919537621032,
-        "Y": 46.077525659182072
+        "X": 434.54919537621,
+        "Y": 44.9726130554094
       },
       {
         "ShowGeometry": true,
@@ -178,13 +322,53 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -139.92976194943009,
+        "X": -139.92976194943,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "85938c4dddd34622ac771a2eda34f8f8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1581.9797742464,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ToString",
+        "Id": "da689ff289de43178a99836bb9de4930",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 882.134407225624,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "440c8fcb3bd44ed4a00d59893eaae52c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 688.215683742286,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "eb101f1269b64a3093fd291c0279b47e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1054.646897717,
         "Y": 44.9726130554094
       }
     ],
     "Annotations": [],
-    "X": 148.59371742202177,
-    "Y": 9.637055840755238,
-    "Zoom": 0.90504895734337021
+    "X": -1742.7933631430687,
+    "Y": 108.99468445822126,
+    "Zoom": 1.2870843739202658
   }
 }
