@@ -90,6 +90,70 @@
       ],
       "Replication": "Auto",
       "Description": "Gibt die Anzahl der Elemente in der angegebenen Liste zurück.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\nimport msvcrt\r\n\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom  Autodesk.Revit.UI import *\r\n\r\nTaskDialog.Show('Anzahl ausgeblendeter Elemente',IN[0])\r\n\t\t\r\nOUT = IN[0]",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "f65e4e89f63841d084dbc448d89b4129",
+      "Inputs": [
+        {
+          "Id": "75bf5131fcfa4b16a9102cb07d8d6430",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6b12964b9ed8487ab397747bb847ff27",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\ndef output1(l1):\r\n\tif len(l1) == 1: return l1[0]\r\n\telse: return l1\r\n\r\nnum1 = tolist(IN[0])\r\nout1 = []\r\nfor i in xrange(len(num1)):\r\n\ts1 = str(num1[i])\r\n\tif s1[-2:] == \".0\": out1.append(s1[:-2])\r\n\telse: out1.append(s1)\r\n\r\nOUT = output1(out1)",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "9eaae94440a640c6aa1cf4c889c1fc08",
+      "Inputs": [
+        {
+          "Id": "b031d59400fa4f6f846e16ae68810230",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "936168d20a9849789e73de5c5ad8144e",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
     }
   ],
   "Connectors": [
@@ -102,11 +166,21 @@
       "Start": "9c6ebb756bd14be1ada72049f191afdc",
       "End": "863dc6879e21466eb984eb7057677e97",
       "Id": "721b0cd48fbb4222a95cf56a10a582ad"
+    },
+    {
+      "Start": "d47f7c9ae61045deb0ebac2f94e494da",
+      "End": "b031d59400fa4f6f846e16ae68810230",
+      "Id": "9fd1c7b8a0474c5e9d99d6ff1b69a7e9"
+    },
+    {
+      "Start": "936168d20a9849789e73de5c5ad8144e",
+      "End": "75bf5131fcfa4b16a9102cb07d8d6430",
+      "Id": "45b65f0d9d5b461aae42394943b29928"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [],
-  "Thumbnail": null,
+  "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
     {
@@ -160,7 +234,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 21.9116059450167,
-        "Y": 44.9726130554094
+        "Y": 18.9380378032099
       },
       {
         "ShowGeometry": true,
@@ -170,7 +244,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": -139.92976194943,
-        "Y": 44.9726130554094
+        "Y": 18.9380378032099
       },
       {
         "ShowGeometry": true,
@@ -179,13 +253,33 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 455.946422967096,
-        "Y": 44.9726130554094
+        "X": 283.720184185281,
+        "Y": 18.9380378032099
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "f65e4e89f63841d084dbc448d89b4129",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 652.465799805128,
+        "Y": 18.9380378032099
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ToString",
+        "Id": "9eaae94440a640c6aa1cf4c889c1fc08",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 477.638907668619,
+        "Y": 18.9380378032099
       }
     ],
     "Annotations": [],
-    "X": 137.90573453335509,
-    "Y": 204.61287896615457,
-    "Zoom": 0.7129582982940541
+    "X": -519.95752027935373,
+    "Y": 160.88163457859423,
+    "Zoom": 1.2137579980580646
   }
 }
