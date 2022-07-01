@@ -31,7 +31,7 @@
          "author":"Osama Almughanni",
          "created":"11.06.2022",
          "dyn":[
-            "dyn/RefreshDashboard/scriptdyn",
+            "dyn/RefreshDashboard/script.dyn",
             "dyn/RefreshDashboard/lastCheck.dyn"
          ]
       },
