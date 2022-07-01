@@ -1,0 +1,191 @@
+{
+  "Uuid": "3567e0a0-7a0d-4e95-93e3-6055117e3c1a",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "CountHiddenElementsInView",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "## Create by https://rv-boost.com/\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n# Import ToDSType(bool) extension method\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n# Import geometry conversion extension methods\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\nfrom System.Collections.Generic import *\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Architecture import *\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nview = doc.ActiveView\r\nhiddenIds = List[ElementId]()\r\n\r\nfor elem in FilteredElementCollector(doc).WhereElementIsNotElementType():\r\n\tif elem.IsHidden(view):\r\n\t\thiddenIds.Add(elem.Id)\r\n\t\t\r\nOUT = hiddenIds",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "59b11876ff244880a71e12b6ed1b1c74",
+      "Inputs": [
+        {
+          "Id": "863dc6879e21466eb984eb7057677e97",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "abfa077bc54b486b8cd02e09afa0063b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "e049a551b8c0413dbf65cafcd8daec40",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9c6ebb756bd14be1ada72049f191afdc",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Auswahl zwischen True und False"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "98ff9e5c72a946049cff16e3294e5eab",
+      "Inputs": [
+        {
+          "Id": "2d086f2ef9cb431ca44571187dca7651",
+          "Name": "list",
+          "Description": "Liste, deren Elementanzahl abgerufen werden soll\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d47f7c9ae61045deb0ebac2f94e494da",
+          "Name": "int",
+          "Description": "Länge der Liste",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt die Anzahl der Elemente in der angegebenen Liste zurück.\n\nList.Count (list: var[]..[]): int"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "abfa077bc54b486b8cd02e09afa0063b",
+      "End": "2d086f2ef9cb431ca44571187dca7651",
+      "Id": "91105f9086f3453baf484895f4b82d4f"
+    },
+    {
+      "Start": "9c6ebb756bd14be1ada72049f191afdc",
+      "End": "863dc6879e21466eb984eb7057677e97",
+      "Id": "721b0cd48fbb4222a95cf56a10a582ad"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "Keine",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Hintergrundvorschau",
+      "EyeX": -19.837705922476481,
+      "EyeY": 235.74818072593152,
+      "EyeZ": 93.721142002343385,
+      "LookX": 29.370481555537935,
+      "LookY": -31.818021685166109,
+      "LookZ": -141.95732751843335,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Get Hidden Elements Ids",
+        "Id": "59b11876ff244880a71e12b6ed1b1c74",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 21.9116059450167,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Refresh",
+        "Id": "e049a551b8c0413dbf65cafcd8daec40",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -139.92976194943,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "98ff9e5c72a946049cff16e3294e5eab",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 455.946422967096,
+        "Y": 44.9726130554094
+      }
+    ],
+    "Annotations": [],
+    "X": 137.90573453335509,
+    "Y": 204.61287896615457,
+    "Zoom": 0.7129582982940541
+  }
+}
