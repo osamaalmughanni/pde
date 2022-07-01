@@ -1,0 +1,190 @@
+{
+  "Uuid": "3567e0a0-7a0d-4e95-93e3-6055117e3c1a",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "UnhideElementsInView",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "## Create by https://rv-boost.com/\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n# Import ToDSType(bool) extension method\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n# Import geometry conversion extension methods\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\nfrom System.Collections.Generic import *\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Architecture import *\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nview = doc.ActiveView\r\nhiddenIds = List[ElementId]()\r\n\r\nfor elem in FilteredElementCollector(doc).WhereElementIsNotElementType():\r\n\tif elem.IsHidden(view):\r\n\t\thiddenIds.Add(elem.Id)\r\n\r\nif hiddenIds.Count > 0:\t\t\r\n\tTransactionManager.Instance.ForceCloseTransaction()\r\n\twith Transaction(doc, \"Unhide all in view\") as transaction:\r\n\t\ttransaction.Start()\r\n\t\tview.UnhideElements(hiddenIds)\r\n\t\ttransaction.Commit()\r\n\r\nrevealed = []\r\nfor id in hiddenIds:\r\n\te = doc.GetElement(id)\r\n\tif e:\r\n\t\trevealed.append(e)\r\n\t\t\r\nOUT = revealed",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "59b11876ff244880a71e12b6ed1b1c74",
+      "Inputs": [
+        {
+          "Id": "863dc6879e21466eb984eb7057677e97",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "abfa077bc54b486b8cd02e09afa0063b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "460f10eca2634fba868e478aec3d1ab8",
+      "Inputs": [
+        {
+          "Id": "f7f0210ca6494ae7be52332208d48e6c",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5d88f610e07c41af9bbc723e34a3878a",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualisierung der Ausgabe des Blocks"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "e049a551b8c0413dbf65cafcd8daec40",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9c6ebb756bd14be1ada72049f191afdc",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Auswahl zwischen True und False"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "abfa077bc54b486b8cd02e09afa0063b",
+      "End": "f7f0210ca6494ae7be52332208d48e6c",
+      "Id": "633db036341f49c2ad7f1e0cefd17f30"
+    },
+    {
+      "Start": "9c6ebb756bd14be1ada72049f191afdc",
+      "End": "863dc6879e21466eb984eb7057677e97",
+      "Id": "721b0cd48fbb4222a95cf56a10a582ad"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "Keine",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Hintergrundvorschau",
+      "EyeX": -19.837705922476481,
+      "EyeY": 235.74818072593152,
+      "EyeZ": 93.721142002343385,
+      "LookX": 29.370481555537935,
+      "LookY": -31.818021685166109,
+      "LookZ": -141.95732751843335,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Unhide all objects hidden in view \"By Element\"",
+        "Id": "59b11876ff244880a71e12b6ed1b1c74",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 21.911605945016731,
+        "Y": 44.9726130554094
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Revealed elements",
+        "Id": "460f10eca2634fba868e478aec3d1ab8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 434.54919537621032,
+        "Y": 46.077525659182072
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Refresh",
+        "Id": "e049a551b8c0413dbf65cafcd8daec40",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -139.92976194943009,
+        "Y": 44.9726130554094
+      }
+    ],
+    "Annotations": [],
+    "X": 148.59371742202177,
+    "Y": 9.637055840755238,
+    "Zoom": 0.90504895734337021
+  }
+}
