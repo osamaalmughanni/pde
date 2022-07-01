@@ -12,7 +12,7 @@
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "## Create by https://rv-boost.com/\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n# Import ToDSType(bool) extension method\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n# Import geometry conversion extension methods\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\nfrom System.Collections.Generic import *\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Architecture import *\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nview = doc.ActiveView\r\nhiddenIds = List[ElementId]()\r\n\r\nfor elem in FilteredElementCollector(doc).WhereElementIsNotElementType():\r\n\tif elem.IsHidden(view):\r\n\t\thiddenIds.Add(elem.Id)\r\n\t\t\r\nOUT = hiddenIds",
+      "Code": "import clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n# Import ToDSType(bool) extension method\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n# Import geometry conversion extension methods\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\nfrom System.Collections.Generic import *\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Architecture import *\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nview = doc.ActiveView\r\nhiddenIds = List[ElementId]()\r\n\r\nfor elem in FilteredElementCollector(doc).WhereElementIsNotElementType():\r\n\tif elem.IsHidden(view):\r\n\t\thiddenIds.Add(elem.Id)\r\n\t\t\r\nOUT = hiddenIds",
       "Engine": "IronPython2",
       "VariableInputPorts": true,
       "Id": "59b11876ff244880a71e12b6ed1b1c74",
@@ -154,6 +154,36 @@
       ],
       "Replication": "Disabled",
       "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"(\" + a + \") Elemente sind in dieser Ansicht ausgeblendet.\";",
+      "Id": "a4d3e203509e45fdbbf05916a61f0f07",
+      "Inputs": [
+        {
+          "Id": "20ba313c67a8442ea9595fe590228eb2",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d05438ec6f034cac86087cfc723c3803",
+          "Name": "",
+          "Description": "Wert des Ausdrucks in Zeile 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     }
   ],
   "Connectors": [
@@ -174,8 +204,13 @@
     },
     {
       "Start": "936168d20a9849789e73de5c5ad8144e",
+      "End": "20ba313c67a8442ea9595fe590228eb2",
+      "Id": "dbbaaada83004cda8a2ef4591bd30feb"
+    },
+    {
+      "Start": "d05438ec6f034cac86087cfc723c3803",
       "End": "75bf5131fcfa4b16a9102cb07d8d6430",
-      "Id": "45b65f0d9d5b461aae42394943b29928"
+      "Id": "6e8d3c5ab769477d94bef497498b7677"
     }
   ],
   "Dependencies": [],
@@ -234,7 +269,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 21.9116059450167,
-        "Y": 18.9380378032099
+        "Y": 4.45979385463158
       },
       {
         "ShowGeometry": true,
@@ -244,7 +279,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": -139.92976194943,
-        "Y": 18.9380378032099
+        "Y": 4.45979385463158
       },
       {
         "ShowGeometry": true,
@@ -254,7 +289,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 283.720184185281,
-        "Y": 18.9380378032099
+        "Y": 4.45979385463158
       },
       {
         "ShowGeometry": true,
@@ -263,8 +298,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 652.465799805128,
-        "Y": 18.9380378032099
+        "X": 1246.90518239386,
+        "Y": 4.45979385463158
       },
       {
         "ShowGeometry": true,
@@ -274,12 +309,22 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 477.638907668619,
-        "Y": 18.9380378032099
+        "Y": 4.45979385463158
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a4d3e203509e45fdbbf05916a61f0f07",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 648.431590703471,
+        "Y": 4.45979385463158
       }
     ],
     "Annotations": [],
-    "X": -519.95752027935373,
-    "Y": 160.88163457859423,
-    "Zoom": 1.2137579980580646
+    "X": 49.755131123980107,
+    "Y": 145.58400466705356,
+    "Zoom": 0.37786910247710831
   }
 }
