@@ -31,8 +31,8 @@
          "author":"Osama Almughanni",
          "created":"11.06.2022",
          "dyn":[
-            "dyn/513495/001-Refresh-Dashboard.dyn",
-            "dyn/513495/lastCheck.dyn"
+            "dyn/RefreshDashboard/scriptdyn",
+            "dyn/RefreshDashboard/lastCheck.dyn"
          ]
       },
       {
@@ -43,10 +43,32 @@
          "author":"Osama Almughanni",
          "created":"22.06.2022",
          "dyn":[
-            "dyn/569124/script.dyn"
+            "dyn/ExportScheduleToExcel/script.dyn"
          ],
          "projects":[
             "20-0653-MCI"
+         ]
+      },
+      {
+         "id":"023649",
+         "categoryId":"1",
+         "name":"Ansichten — Alle Elemente einblenden",
+         "description":"Mit einem Klick werden alle ausgeblendeten Elementen wieder eingeblendet. Auf eigene Gefahr verwenden ⚡",
+         "author":"Osama Almughanni",
+         "created":"21.07.2022",
+         "dyn":[
+            "dyn/UnhideElementsInView/script.dyn"
+         ]
+      },
+      {
+         "id":"265479",
+         "categoryId":"1",
+         "name":"Ansichten — Summe aller ausgeblendeten Elemente",
+         "description":"Das Tool sagt dir schnell wie viele Elemente in dieser Ansicht ausgeblendet wurden.",
+         "author":"Osama Almughanni",
+         "created":"22.06.2022",
+         "dyn":[
+            "dyn/CountHiddenElementsInView/script.dyn"
          ]
       },
        {
@@ -57,7 +79,7 @@
          "author":"Osama Almughanni",
          "created":"12.06.2019",
          "dyn":[
-            "dyn/864742/script.dyn"
+            "dyn/SumRoomArea/script.dyn"
          ]
       },
       {
@@ -68,7 +90,7 @@
          "author":"Osama Almughanni",
          "created":"16.06.2020",
          "dyn":[
-            "dyn/565789/script.dyn"
+            "dyn/CopyElementIdToClipboard/script.dyn"
          ]
       }
    ]
