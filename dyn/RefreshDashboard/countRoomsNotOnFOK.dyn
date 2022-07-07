@@ -1,0 +1,729 @@
+{
+  "Uuid": "217503fc-96e0-462c-9613-56298ff5139a",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "countRoomsNotOnFOK",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "FamilyType": {
+        "Key": "Revit.Elements.FamilyType",
+        "Value": "RevitNodes.dll"
+      },
+      "Revit.FamilyInstance": {
+        "Key": "Revit.Elements.FamilyInstance",
+        "Value": "RevitNodes.dll"
+      },
+      "Revit.Elements.FamilyInstance": {
+        "Key": "Revit.Elements.FamilyInstance",
+        "Value": "RevitNodes.dll"
+      },
+      "Revit.Elements.Element": {
+        "Key": "Revit.Elements.Element",
+        "Value": "RevitNodes.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "DesignScript.Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      },
+      "DesignScript.Builtin.Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      },
+      "DateTime.Now": {
+        "Key": "DSCore.DateTime",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Revit.Elements.Parameter": {
+        "Key": "Revit.Elements.Parameter",
+        "Value": "RevitNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "element = ((List.IsEmpty(x) ? false : x));\nRevit.Elements.Element.SetParameterByName(element, \"lastUpdate\", (DateTime.Now+\"\"));",
+      "Id": "0f9cbca370244dd3ae175001ee174962",
+      "Inputs": [
+        {
+          "Id": "a66e195a140c4042a1fe00a399062aa5",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4824b69d20a44893bd18b98c635c8e37",
+          "Name": "",
+          "Description": "element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc46aad16acc4751a28406968b54ba6f",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "familytype = FamilyType.ByName(\"pdeInfoBox\");\nfamilyinstance = Revit.FamilyInstance.ByFamilyType(familytype);\nid = \"countRoomsNotOnFOK\";\na = Revit.Elements.Element.GetParameterValueByName(familyinstance, \"ID\");\nt1 = ((a == id ? true : false));\nt4 = List.FilterByBoolMask(familyinstance, t1);\nt5 = DesignScript.Dictionary.ValueAtKey(t4, \"in\");\nRevit.Elements.Element.SetParameterByName(t5, \"isValue\", input);",
+      "Id": "ba71848c41254b9eb4209ad057dbf406",
+      "Inputs": [
+        {
+          "Id": "2627c6a38cd941079bf8412741db76e3",
+          "Name": "input",
+          "Description": "input",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c01be7d512245ebbeae90a22ce867bb",
+          "Name": "",
+          "Description": "familytype",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d10b3c53c4f04a5794a19420e220fb7f",
+          "Name": "",
+          "Description": "familyinstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dac073cacce4484b99fbc5c68e14a4cf",
+          "Name": "",
+          "Description": "id",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fd3c0b5d45344f6e89434a00d69dfc86",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "79dea1e319c34e5b9db8bd4946aa3d59",
+          "Name": "",
+          "Description": "t1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f0038934b4a74b37a83326f9624efcef",
+          "Name": "",
+          "Description": "t4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "abeee74e0c564430975a48e91e9d4ac3",
+          "Name": "",
+          "Description": "t5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6611a2929c53447db276078fff5c1e50",
+          "Name": "",
+          "Description": "Value of expression at line 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#dynre*\r\n#zoeleq\r\n#GetBuiltInParameterValueByElement\r\n\r\nimport clr\r\nimport sys\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\npyt_path = r'C:\\Program Files (x86)\\IronPython 2.7\\Lib'\r\nsys.path.append(pyt_path)\r\n\r\n# Import Element wrapper extension methods\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n# Import DocumentManager and TransactionManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuiapp = DocumentManager.Instance.CurrentUIApplication\r\napp = uiapp.Application\r\n\r\n# Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk\r\nfrom Autodesk.Revit.DB import *\r\nimport System\r\n\r\n#The inputs to this node will be stored as a list in the IN variable.\r\ndataEnteringNode = IN\r\n\r\nparamNames = IN[0]\r\n\r\nif isinstance(IN[1], list):\r\n\tsheets = []\r\n\tfor i in IN[1]:\r\n\t\tsheets.append(UnwrapElement(i))\r\nelse:\r\n\tsheets = IN[1]\r\n\r\nelements = []\r\nfor i in sheets:\r\n\telements.append(UnwrapElement(i))\r\n\r\ndef ProcessList(_func, _list):\r\n    return map( lambda x: ProcessList(_func, x) if type(x)==list else _func(x), _list )\r\n\r\ndef ProcessListArg(_func, _list, _arg):\r\n    return map( lambda x: ProcessListArg(_func, x, _arg) if type(x)==list else _func(x, _arg), _list )\r\n\r\ndef GetBuiltInParam(paramName):\r\n\tbuiltInParams = System.Enum.GetValues(BuiltInParameter)\r\n\ttest = []\r\n\tfor i in builtInParams:\r\n\t\tif i.ToString() == paramName:\r\n\t\t\ttest.append(i)\r\n\t\t\tbreak\r\n\t\telse:\r\n\t\t\tcontinue\r\n\treturn test[0]\r\n\r\ndef GetBipValue(element, bip):\r\n\tdoc = DocumentManager.Instance.CurrentDBDocument\r\n\tvalue = None\r\n\ttry:\r\n\t\ttempValue = element.get_Parameter(bip)\r\n\texcept:\r\n\t\ttempValue = None\r\n\t\tpass\r\n\tif tempValue != None and tempValue.HasValue:\r\n\t\tif element.get_Parameter(bip).StorageType == StorageType.String:\r\n\t\t\tvalue = element.get_Parameter(bip).AsString()\r\n\t\telif element.get_Parameter(bip).StorageType == StorageType.Integer:\r\n\t\t\tvalue  = element.get_Parameter(bip).AsInteger()\r\n\t\telif element.get_Parameter(bip).StorageType == StorageType.Double:\r\n\t\t\tvalue = element.get_Parameter(bip).AsDouble()\r\n\t\telif element.get_Parameter(bip).StorageType == StorageType.ElementId:\r\n\t\t\tid = element.get_Parameter(bip).AsElementId()\r\n\t\t\tvalue = doc.GetElement(id)\r\n\t\treturn value\r\n\telse:\r\n\t\treturn None\r\n\r\ntry:\r\n\terrorReport = None\r\n\tparamValues = []\r\n\tif isinstance(paramNames, list):\r\n\t\tbuiltInParams = ProcessList(GetBuiltInParam, paramNames)\r\n\t\tfor i in builtInParams:\r\n\t\t\tparamValues.append(ProcessListArg(GetBipValue, elements, i))\r\n\telse:\r\n\t\tbuiltInParams = GetBuiltInParam(paramNames)\r\n\t\tif isinstance(sheets, list):\r\n\t\t\tfor sheet in sheets:\r\n\t\t\t\tparamValues.append(GetBipValue(sheet, builtInParams))\r\nexcept:\r\n\t# if error accurs anywhere in the process catch it\r\n\timport traceback\r\n\terrorReport = traceback.format_exc()\r\n\r\n#Assign your output to the OUT variable\r\nif errorReport == None:\r\n\tOUT = paramValues\r\nelse:\r\n\tOUT = errorReport\r\n\r\n#dynre*",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "f3a0f2d7e4094176b377a68fc231a7b8",
+      "Inputs": [
+        {
+          "Id": "129b38ec1f5d46a3bb031627df62aaeb",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "260ae431a00a4f61904db9adb6a72e2f",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "805d7df86c9e4dcaaa8e644e863f7749",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a != \"FBOK\";",
+      "Id": "6e7dbe2cda934b7b85d4fcfc4bb4f1f6",
+      "Inputs": [
+        {
+          "Id": "3f4941aa99234ed498bb146e68a81091",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d8d924b8c12c491fa593f839d0dea39a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.CountTrue@var[]..[]",
+      "Id": "e01a58f3fc024bde823d45e578d2a11d",
+      "Inputs": [
+        {
+          "Id": "58eb158402f74b42a5b31e7927e9e431",
+          "Name": "list",
+          "Description": "The list find the true boolean values.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6734983f90b64fd79c8bf9cda69a4144",
+          "Name": "int",
+          "Description": "The number of true boolean values in the list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of true boolean values in the given list.\n\nList.CountTrue (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "0a081d2a9669412d95be82b428db800c",
+      "Inputs": [
+        {
+          "Id": "de9e369b1dc04367b6501d5c8d5975a7",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "85e18d9538c949c99c468b6e7d29f029",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"ROOM_LEVEL_ID\";",
+      "Id": "880ff5f207184900830799e8faf90ef9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d3518126ce1f4c4a961fed4adf433c38",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "e9cf704c3ac44ce9be974b0ce3493f8f",
+      "Inputs": [
+        {
+          "Id": "2bd80149aae744eaa5842af7c15081db",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e25d531e14794f7f8e76786719e30b62",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"OST_Rooms\";",
+      "Id": "a3389b6bd7bd4e45acc19ae337b9fc19",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7891d7902b054640b919fc7b89d3ca1f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "OUT = str(IN[0])",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "6822f75785544f8281829166abc566b8",
+      "Inputs": [
+        {
+          "Id": "9e8f88c11a2b4c68adae07af1be12c22",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7001b35ba4124cdb898efaf157273e09",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.ElementType",
+      "Id": "bbfb60f1753d483a88191c4f3efdb5e9",
+      "Inputs": [
+        {
+          "Id": "fd4b3bf5cfa444239dc5ab3460ad27e4",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7fc4eadceaff427782d2edd4e6fc5567",
+          "Name": "ElementType",
+          "Description": "Element Type or Null.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the ElementType for this Element. Returns null if the Element cannot have an ElementType assigned.\n\nElement.ElementType: ElementType"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "4b5ef0b5a5114a1587047a3db57840e0",
+      "Inputs": [
+        {
+          "Id": "fbf741cf1e2d4c3eadf707fa71d92fd9",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "03e493947d9b4934a8783fc22ba9f330",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#https://stackoverflow.com/questions/30488751/clean-list-or-list-of-lists-of-all-none-or-empty-lists-in-python\n\ndef ClearList(primList):\n    result = []\n    for sublist in primList:\n        if sublist is \"\":\n            continue\n        elif sublist is None:\n            continue \n        if isinstance(sublist, list):\n             sublist = ClearList(sublist)\n             if not sublist:\n                 continue\n        result.append(sublist)\n    return result\n\nOUT = ClearList(IN[0])",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "f1e9c139c9db43cbb94bfc65a6a99f98",
+      "Inputs": [
+        {
+          "Id": "b57def59af09465ca073d71a3edaf43d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1732f5c2cb1448ef970174e1625865ab",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6611a2929c53447db276078fff5c1e50",
+      "End": "a66e195a140c4042a1fe00a399062aa5",
+      "Id": "063133526d16441197d0fc18f1f31cef"
+    },
+    {
+      "Start": "805d7df86c9e4dcaaa8e644e863f7749",
+      "End": "b57def59af09465ca073d71a3edaf43d",
+      "Id": "ae73771af2a24357be6c5e7c6a5311cf"
+    },
+    {
+      "Start": "d8d924b8c12c491fa593f839d0dea39a",
+      "End": "58eb158402f74b42a5b31e7927e9e431",
+      "Id": "d7797fa5f03d41a68148a7b7e5817bef"
+    },
+    {
+      "Start": "6734983f90b64fd79c8bf9cda69a4144",
+      "End": "9e8f88c11a2b4c68adae07af1be12c22",
+      "Id": "f225f52b6fb54c27a26e8cd7e854b7cd"
+    },
+    {
+      "Start": "85e18d9538c949c99c468b6e7d29f029",
+      "End": "260ae431a00a4f61904db9adb6a72e2f",
+      "Id": "f28b8e5face143c28b2a5712cfd4a99c"
+    },
+    {
+      "Start": "d3518126ce1f4c4a961fed4adf433c38",
+      "End": "129b38ec1f5d46a3bb031627df62aaeb",
+      "Id": "2e23de533e644dceb3abbc6ee40680b6"
+    },
+    {
+      "Start": "e25d531e14794f7f8e76786719e30b62",
+      "End": "de9e369b1dc04367b6501d5c8d5975a7",
+      "Id": "a0b146cba7854bdf8ebba1922611e412"
+    },
+    {
+      "Start": "7891d7902b054640b919fc7b89d3ca1f",
+      "End": "2bd80149aae744eaa5842af7c15081db",
+      "Id": "ac8fd41db2444ae38dc624d19732a4b7"
+    },
+    {
+      "Start": "7001b35ba4124cdb898efaf157273e09",
+      "End": "2627c6a38cd941079bf8412741db76e3",
+      "Id": "ee85d96c3aac47238d3f9170f44b29b3"
+    },
+    {
+      "Start": "7fc4eadceaff427782d2edd4e6fc5567",
+      "End": "fbf741cf1e2d4c3eadf707fa71d92fd9",
+      "Id": "e8b2d132016e43ea9744cc4ea9760a88"
+    },
+    {
+      "Start": "03e493947d9b4934a8783fc22ba9f330",
+      "End": "3f4941aa99234ed498bb146e68a81091",
+      "Id": "efd0611ae3464aae8a92278ffba51a42"
+    },
+    {
+      "Start": "1732f5c2cb1448ef970174e1625865ab",
+      "End": "fd4b3bf5cfa444239dc5ab3460ad27e4",
+      "Id": "e52fdcc2756a42d080d5cb67c6bb6008"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "0f9cbca370244dd3ae175001ee174962",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3153.02121662959,
+        "Y": -1799.42295010003
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "ba71848c41254b9eb4209ad057dbf406",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -3903.56002647559,
+        "Y": -1891.42295010003
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "GetParameterValueByBuiltInParameterName",
+        "Id": "f3a0f2d7e4094176b377a68fc231a7b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5724.48978008186,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "6e7dbe2cda934b7b85d4fcfc4bb4f1f6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4543.46606110662,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.CountTrue",
+        "Id": "e01a58f3fc024bde823d45e578d2a11d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4347.03086919049,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "0a081d2a9669412d95be82b428db800c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6049.03131022396,
+        "Y": -1506.80530553282
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "880ff5f207184900830799e8faf90ef9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6102.64289431826,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "e9cf704c3ac44ce9be974b0ce3493f8f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6294.92825104807,
+        "Y": -1506.80530553282
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a3389b6bd7bd4e45acc19ae337b9fc19",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6482.77636103761,
+        "Y": -1506.80530553282
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ToString",
+        "Id": "6822f75785544f8281829166abc566b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4163.77365139469,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.ElementType",
+        "Id": "bbfb60f1753d483a88191c4f3efdb5e9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5074.22467219698,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Name",
+        "Id": "4b5ef0b5a5114a1587047a3db57840e0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4791.2264696633,
+        "Y": -1653.56715325549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Clean",
+        "Id": "f1e9c139c9db43cbb94bfc65a6a99f98",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5325.20201250167,
+        "Y": -1653.56715325549
+      }
+    ],
+    "Annotations": [],
+    "X": 2235.9258229336615,
+    "Y": 1206.9921500363907,
+    "Zoom": 0.54918086765803831
+  }
+}
