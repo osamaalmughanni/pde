@@ -69,6 +69,11 @@
             "dyn/RefreshDashboard/countCADIn2D.dyn",
             "dyn/RefreshDashboard/countAllModelElements.dyn",
             "dyn/RefreshDashboard/countAllCAD.dyn",
+            "dyn/RefreshDashboard/countWindowsNotOnFOK.dyn",
+            "dyn/RefreshDashboard/countRoomsNotOnFOK.dyn",
+            "dyn/RefreshDashboard/countDoorsNotOnFOK.dyn",
+            "dyn/RefreshDashboard/countDoorsWithOffset.dyn",
+            "dyn/RefreshDashboard/countWindowsWithOffset.dyn",
             "dyn/RefreshDashboard/lastUpdate.dyn",
             "dyn/RefreshDashboard/lastCheck.dyn"
          ]
