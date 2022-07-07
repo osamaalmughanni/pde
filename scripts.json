@@ -58,6 +58,7 @@
             "dyn/RefreshDashboard/countModelGroups.dyn",
             "dyn/RefreshDashboard/countLinkedCAD.dyn",
             "dyn/RefreshDashboard/countInPlaceFamilies.dyn",
+            "dyn/RefreshDashboard/countLevels.dyn",
             "dyn/RefreshDashboard/countImportedImages.dyn",
             "dyn/RefreshDashboard/countImportedCAD.dyn",
             "dyn/RefreshDashboard/countFloorsWithOffset.dyn",
