@@ -71,7 +71,7 @@
         {
           "Id": "cc46aad16acc4751a28406968b54ba6f",
           "Name": "",
-          "Description": "Value of expression at line 2",
+          "Description": "Wert des Ausdrucks in Zeile 2",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -79,7 +79,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -164,7 +164,7 @@
         {
           "Id": "e7541ce67d644273a7ff684375cac7a1",
           "Name": "",
-          "Description": "Value of expression at line 8",
+          "Description": "Wert des Ausdrucks in Zeile 8",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -172,7 +172,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -204,7 +204,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Runs an embedded Python script."
+      "Description": "Führt ein eingebettetes Python-Skript aus."
     },
     {
       "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
@@ -261,7 +261,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Makes a new list out of the given inputs"
+      "Description": "Erstellt eine neue Liste aus den angegebenen Eingaben."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -273,7 +273,7 @@
         {
           "Id": "dfd84a956f784dbe845e0b3c550be6a3",
           "Name": "",
-          "Description": "Value of expression at line 1",
+          "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -282,7 +282,7 @@
         {
           "Id": "58c02cb8f8ee429ba4da0f598ad5854a",
           "Name": "",
-          "Description": "Value of expression at line 2",
+          "Description": "Wert des Ausdrucks in Zeile 2",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -291,7 +291,7 @@
         {
           "Id": "3bf6ed11389249b49c55b2771a21bea5",
           "Name": "",
-          "Description": "Value of expression at line 3",
+          "Description": "Wert des Ausdrucks in Zeile 3",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -300,7 +300,7 @@
         {
           "Id": "d97549be382a4a1ab172328d9d022d79",
           "Name": "",
-          "Description": "Value of expression at line 4",
+          "Description": "Wert des Ausdrucks in Zeile 4",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -308,7 +308,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -328,7 +328,7 @@
         {
           "Id": "49d74415fc984ebd81bb7c25d60becee",
           "Name": "parameterName",
-          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "Description": "Der Name des Parameters, dessen Wert Sie abrufen möchten\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -347,7 +347,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+      "Description": "Ruft den Wert eines der Parameter für das Element ab.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
@@ -379,7 +379,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Runs an embedded Python script."
+      "Description": "Führt ein eingebettetes Python-Skript aus."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -390,7 +390,7 @@
         {
           "Id": "f09eeda852c94323b85c109ddcf3c1e6",
           "Name": "list",
-          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "Description": "Liste, deren Elementanzahl abgerufen werden soll\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": true,
@@ -400,8 +400,8 @@
       "Outputs": [
         {
           "Id": "27b0691aee834588acc0e7cd97f5a176",
-          "Name": "count",
-          "Description": "List length.",
+          "Name": "int",
+          "Description": "Länge der Liste",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -409,7 +409,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+      "Description": "Gibt die Anzahl der Elemente in der angegebenen Liste zurück.\n\nList.Count (list: var[]..[]): int"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -418,7 +418,7 @@
       "Id": "3dc7a54e74394ff99894268d3e3168c8",
       "Inputs": [
         {
-          "Id": "12bd64c86ad145dfa55e797ff791a103",
+          "Id": "b329ba99150945d99f12af75bdc3892b",
           "Name": "x",
           "Description": "x",
           "UsingDefaultValue": false,
@@ -429,9 +429,9 @@
       ],
       "Outputs": [
         {
-          "Id": "18c392168ff24178bfcda41b6c5db41a",
+          "Id": "7dc79311994d446c99b1063282a15fb3",
           "Name": "",
-          "Description": "Value of expression at line 1",
+          "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -439,7 +439,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -450,7 +450,7 @@
         {
           "Id": "8bff666b2a824142a600fb588748d605",
           "Name": "list",
-          "Description": "The list find the false boolean values.\n\nvar[]..[]",
+          "Description": "Liste, in der nach Booleschen False-Werten gesucht werden soll\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -461,7 +461,7 @@
         {
           "Id": "c1fdee3f71404bfaa6969eecf9319b0b",
           "Name": "int",
-          "Description": "The number of false boolean values in the list.",
+          "Description": "Anzahl der Booleschen False-Werte in der Liste",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -469,7 +469,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Returns the number of false boolean values in the given list.\n\nList.CountFalse (list: var[]..[]): int"
+      "Description": "Gibt die Anzahl der Booleschen False-Werte in der angegebenen Liste zurück.\n\nList.CountFalse (list: var[]..[]): int"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -480,7 +480,7 @@
         {
           "Id": "5c3b7ec75259429d9b6fd76982a35d53",
           "Name": "list",
-          "Description": "List to flatten.\n\nvar[]..[]",
+          "Description": "Zu vereinfachende Liste\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -488,8 +488,8 @@
         },
         {
           "Id": "57d31de06ed2437db62f9b53e6bcba15",
-          "Name": "amt",
-          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "Name": "amount",
+          "Description": "Layer der zu entfernenden Listenverschachtelung (-1 entfernt alle Listenverschachtelungen)\n\nint\nVorgabewert : -1",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -499,8 +499,8 @@
       "Outputs": [
         {
           "Id": "848f30f62b03454eade3320d3b8099a2",
-          "Name": "var[]..[]",
-          "Description": "var[]..[]",
+          "Name": "list",
+          "Description": "Vereinfachte Liste nach Betrag",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -508,12 +508,12 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+      "Description": "Vereinfacht eine verschachtelte Liste von Listen um eine bestimmte Anzahl von Ebenen.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "#Copyright(c) 2015, Konrad Sobon\n# @arch_laboratory, http://archi-lab.net\n\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\n\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\n\nfrom System.Collections.Generic import *\n\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n\n#The inputs to this node will be stored as a list in the IN variable.\ndataEnteringNode = IN\n\n#collect all views in the model\ncollector = FilteredElementCollector(doc)\nviews = collector.OfClass(View).ToElements()\n\n#sort views into separate lists based on view type\nareaPlans, ceilingPlans, columnSchedules = [], [], []\ncostReport, details, draftingViews = [], [], []\ndrawingSheets, elevations, engineetingPlans = [], [], []\nfloorPlans, internal, legends, loadReports = [], [], [], []\npanelSchedules, pressureLossReports, renderings = [], [], []\nreports, schedules, sections, threeD = [], [], [], []\nundefined, walkthrough = [], []\nfor i in views:\n\tif not i.IsTemplate:\n\t\tif i.ViewType == ViewType.AreaPlan:\n\t\t\tareaPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CeilingPlan:\n\t\t\tceilingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ColumnSchedule:\n\t\t\tcolumnSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CostReport:\n\t\t\tcostReport.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Detail:\n\t\t\tdetails.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DraftingView:\n\t\t\tdraftingViews.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DrawingSheet:\n\t\t\tdrawingSheets.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Elevation:\n\t\t\televations.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.EngineeringPlan:\n\t\t\tengineetingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.FloorPlan:\n\t\t\tfloorPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Internal:\n\t\t\tinternal.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Legend:\n\t\t\tlegends.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.LoadsReport:\n\t\t\tloadReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PanelSchedule:\n\t\t\tpanelSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PresureLossReport:\n\t\t\tpressureLossReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Rendering:\n\t\t\trenderings.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Report:\n\t\t\treports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Schedule:\n\t\t\tschedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Section:\n\t\t\tsections.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ThreeD:\n\t\t\tthreeD.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Undefined:\n\t\t\tundefined.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Walkthrough:\n\t\t\twalkthrough.append(i.ToDSType(True))\n\t\telse:\n\t\t\tcontinue\n\n#Assign your output to the OUT variable\nOUT = areaPlans, ceilingPlans, columnSchedules, costReport, \\\n\tdetails, draftingViews, drawingSheets, elevations, \\\n\tengineetingPlans, floorPlans, internal, legends, \\\n\tloadReports, panelSchedules, pressureLossReports, \\\n\trenderings, reports, schedules, sections, threeD, \\\n\tundefined, walkthrough",
+      "Code": "#Copyright(c) 2015, Konrad Sobon\n# @arch_laboratory, http://archi-lab.net\n\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\n\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\n\nfrom System.Collections.Generic import *\n\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n\n#The inputs to this node will be stored as a list in the IN variable.\ndataEnteringNode = IN\n\n#collect all views in the model\ncollector = FilteredElementCollector(doc)\nviews = collector.OfClass(View).ToElements()\n\n#sort views into separate lists based on view type\nareaPlans, ceilingPlans, columnSchedules = [], [], []\ncostReport, details, draftingViews = [], [], []\ndrawingSheets, elevations, engineetingPlans = [], [], []\nfloorPlans, internal, legends, loadReports = [], [], [], []\npanelSchedules, pressureLossReports, renderings = [], [], []\nreports, schedules, sections, threeD = [], [], [], []\nundefined, walkthrough = [], []\nfor i in views:\n\tif not i.IsTemplate:\n\t\tif i.ViewType == ViewType.AreaPlan:\n\t\t\tareaPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CeilingPlan:\n\t\t\tceilingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ColumnSchedule:\n\t\t\tcolumnSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CostReport:\n\t\t\tcostReport.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Detail:\n\t\t\tdetails.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DraftingView:\n\t\t\tdraftingViews.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DrawingSheet:\n\t\t\tdrawingSheets.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Elevation:\n\t\t\televations.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.EngineeringPlan:\n\t\t\tengineetingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.FloorPlan:\n\t\t\tfloorPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Internal:\n\t\t\tinternal.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Legend:\n\t\t\tlegends.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.LoadsReport:\n\t\t\tloadReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PanelSchedule:\n\t\t\tpanelSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PresureLossReport:\n\t\t\tpressureLossReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Rendering:\n\t\t\trenderings.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Report:\n\t\t\treports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Schedule:\n\t\t\tschedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Section:\n\t\t\tsections.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ThreeD:\n\t\t\tthreeD.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Undefined:\n\t\t\tundefined.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Walkthrough:\n\t\t\twalkthrough.append(i.ToDSType(True))\n\t\telse:\n\t\t\tcontinue\n\n#Assign your output to the OUT variable\nOUT = areaPlans, ceilingPlans, columnSchedules, costReport, \\\n\tdetails, draftingViews, drawingSheets, elevations, \\\n\tengineetingPlans, floorPlans, internal, legends, \\\n\tloadReports, panelSchedules, pressureLossReports, \\\n\trenderings, reports, sections, threeD, \\\n\tundefined, walkthrough",
       "Engine": "IronPython2",
       "VariableInputPorts": true,
       "Id": "29e852bd4cdc41ada7f6932be7fc9457",
@@ -530,7 +530,268 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Runs an embedded Python script."
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\n\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\n\nfrom System.Collections.Generic import *\n\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n\n#The inputs to this node will be stored as a list in the IN variable.\ndataEnteringNode = IN\n\n#collect all views in the model\ncollector = FilteredElementCollector(doc)\nviews = collector.OfClass(View).ToElements()\n\n#sort views into separate lists based on view type\nareaPlans, ceilingPlans, columnSchedules = [], [], []\ncostReport, details, draftingViews = [], [], []\ndrawingSheets, elevations, engineetingPlans = [], [], []\nfloorPlans, internal, legends, loadReports = [], [], [], []\npanelSchedules, pressureLossReports, renderings = [], [], []\nreports, schedules, sections, threeD = [], [], [], []\nundefined, walkthrough = [], []\nfor i in views:\n\tif not i.IsTemplate:\n\t\tif i.ViewType == ViewType.AreaPlan:\n\t\t\tareaPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CeilingPlan:\n\t\t\tceilingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ColumnSchedule:\n\t\t\tcolumnSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.CostReport:\n\t\t\tcostReport.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Detail:\n\t\t\tdetails.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DraftingView:\n\t\t\tdraftingViews.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.DrawingSheet:\n\t\t\tdrawingSheets.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Elevation:\n\t\t\televations.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.EngineeringPlan:\n\t\t\tengineetingPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.FloorPlan:\n\t\t\tfloorPlans.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Internal:\n\t\t\tinternal.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Legend:\n\t\t\tlegends.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.LoadsReport:\n\t\t\tloadReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PanelSchedule:\n\t\t\tpanelSchedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.PresureLossReport:\n\t\t\tpressureLossReports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Rendering:\n\t\t\trenderings.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Report:\n\t\t\treports.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Schedule:\n\t\t\tschedules.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Section:\n\t\t\tsections.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.ThreeD:\n\t\t\tthreeD.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Undefined:\n\t\t\tundefined.append(i.ToDSType(True))\n\t\telif i.ViewType == ViewType.Walkthrough:\n\t\t\twalkthrough.append(i.ToDSType(True))\n\t\telse:\n\t\t\tcontinue\n\n#Assign your output to the OUT variable\nOUT = schedules",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "c0e54f5df94745939bfcfa60a7c2c918",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d7bf7e4e2f7940ada60a9b6b49e37d37",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "(x == 2) ? true : false;",
+      "Id": "b29669959e38444ab335152e3b5c4ea3",
+      "Inputs": [
+        {
+          "Id": "7ac21a45884748e591a4f84c3398f594",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca162eb2a5454402986f6a8d140e412e",
+          "Name": "",
+          "Description": "Wert des Ausdrucks in Zeile 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.CountFalse@var[]..[]",
+      "Id": "aff6fbef02344015a79f0bdc56a20413",
+      "Inputs": [
+        {
+          "Id": "23b3c5e3959f4ab49fb5d70eced1dec1",
+          "Name": "list",
+          "Description": "Liste, in der nach Booleschen False-Werten gesucht werden soll\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fe8ef72d968e40b49477e251dd26a244",
+          "Name": "int",
+          "Description": "Anzahl der Booleschen False-Werte in der Liste",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt die Anzahl der Booleschen False-Werte in der angegebenen Liste zurück.\n\nList.CountFalse (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "72adb76e1494493d828ed015385bf1b7",
+      "Inputs": [
+        {
+          "Id": "f1ac6d6b7c37410b9d2d02e6ba994ecb",
+          "Name": "list",
+          "Description": "Liste, deren Elementanzahl abgerufen werden soll\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c324ec8bb8df416a9e6ba8f903f1860b",
+          "Name": "int",
+          "Description": "Länge der Liste",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt die Anzahl der Elemente in der angegebenen Liste zurück.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#https://stackoverflow.com/questions/30488751/clean-list-or-list-of-lists-of-all-none-or-empty-lists-in-python\n\ndef ClearList(primList):\n    result = []\n    for sublist in primList:\n        if sublist is \"\":\n            continue\n        elif sublist is None:\n            continue \n        if isinstance(sublist, list):\n             sublist = ClearList(sublist)\n             if not sublist:\n                 continue\n        result.append(sublist)\n    return result\n\nOUT = ClearList(IN[0])",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "2665ded109844032b0538c5755ad0d88",
+      "Inputs": [
+        {
+          "Id": "31eec2d01b3243b3b96fe3aa2ed061e5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "224d19f40d82402899265ca40419a8b2",
+          "Name": "OUT",
+          "Description": "Ergebnis des Python-Skripts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Führt ein eingebettetes Python-Skript aus."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "3364269595b140e89771a7dd50a63d36",
+      "Inputs": [
+        {
+          "Id": "e68aaacb3dd642e0b6ee039d0aebde23",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6adb253dfd0f41a1a6316dfc0417fde2",
+          "Name": "parameterName",
+          "Description": "Der Name des Parameters, dessen Wert Sie abrufen möchten\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c47636e9a5f42548c5d5a64e847be0d",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Ruft den Wert eines der Parameter für das Element ab.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "c238a752efcb4df99be016780b33537d",
+      "Inputs": [
+        {
+          "Id": "0357edffc7004049aea8225b5806bfe6",
+          "Name": "list",
+          "Description": "Zu vereinfachende Liste\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e13263d9acc84276adaeb09b6917e29b",
+          "Name": "amount",
+          "Description": "Layer der zu entfernenden Listenverschachtelung (-1 entfernt alle Listenverschachtelungen)\n\nint\nVorgabewert : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7ebed00a55b9416ea1483e5d28eb0702",
+          "Name": "list",
+          "Description": "Vereinfachte Liste nach Betrag",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Vereinfacht eine verschachtelte Liste von Listen um eine bestimmte Anzahl von Ebenen.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "+@var[]..[],var[]..[]",
+      "Id": "bd7b5f33bdcc49fd9df374a9c9325666",
+      "Inputs": [
+        {
+          "Id": "8789fdf8762842e0aa48a9d15fecde44",
+          "Name": "x",
+          "Description": "Ganzzahlwert, double-Wert oder string\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ac8b7c4f2cf84cb68d1346f97925e8cf",
+          "Name": "y",
+          "Description": "Ganzzahlwert, double-Wert oder string\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e95738ca5084f7a8d9a3a15354d4268",
+          "Name": "var",
+          "Description": "Die Summe zweier Eingabezahlen oder die Verkettung von zwei Zeichenfolgen",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gibt die Addition von x plus y zurück\n\n+ (x: var[]..[], y: var[]..[]): var[]..[]"
     }
   ],
   "Connectors": [
@@ -548,6 +809,11 @@
       "Start": "8f0adfae68fa435a856326304a10ab39",
       "End": "49d74415fc984ebd81bb7c25d60becee",
       "Id": "abb18d63f73a4ead95c4143b53b9f10d"
+    },
+    {
+      "Start": "8f0adfae68fa435a856326304a10ab39",
+      "End": "6adb253dfd0f41a1a6316dfc0417fde2",
+      "Id": "ff24cdcfab9643a1897350fd34cdbe9f"
     },
     {
       "Start": "dfd84a956f784dbe845e0b3c550be6a3",
@@ -581,44 +847,107 @@
     },
     {
       "Start": "27b0691aee834588acc0e7cd97f5a176",
-      "End": "12bd64c86ad145dfa55e797ff791a103",
-      "Id": "cd86723eaa0d4792baeeb49b80da7de1"
+      "End": "b329ba99150945d99f12af75bdc3892b",
+      "Id": "6eaf9efab0764c62a7f6dc0f5a6c3262"
     },
     {
-      "Start": "18c392168ff24178bfcda41b6c5db41a",
+      "Start": "7dc79311994d446c99b1063282a15fb3",
       "End": "8bff666b2a824142a600fb588748d605",
-      "Id": "669948f13145446e8cdbc2241560700e"
+      "Id": "a01a66147cf4492086b95a5693fe1ecd"
     },
     {
       "Start": "c1fdee3f71404bfaa6969eecf9319b0b",
-      "End": "76fac46fc9c04b03ab386b476fac642d",
-      "Id": "64d52d3f1c564361a0a9f64d4ca66d3f"
+      "End": "8789fdf8762842e0aa48a9d15fecde44",
+      "Id": "285cded0f65742d591448fe3e2449d31"
     },
     {
       "Start": "848f30f62b03454eade3320d3b8099a2",
       "End": "5b516cb3dd5c4086ae1b2290ce8d5e0d",
-      "Id": "3e0650d15c324326a5e10883d828227e"
+      "Id": "3697d122a01340048ba4ab5aefaa4e09"
     },
     {
       "Start": "46a5bc699aa14ea4a29f418a9a96b317",
       "End": "5c3b7ec75259429d9b6fd76982a35d53",
       "Id": "704b2caae1334f4db8a06b0cb91cefff"
+    },
+    {
+      "Start": "d7bf7e4e2f7940ada60a9b6b49e37d37",
+      "End": "0357edffc7004049aea8225b5806bfe6",
+      "Id": "25fc5c3c6167499780ab18ab5aede316"
+    },
+    {
+      "Start": "ca162eb2a5454402986f6a8d140e412e",
+      "End": "23b3c5e3959f4ab49fb5d70eced1dec1",
+      "Id": "10a67f0e1197485abe0759fe7236ee56"
+    },
+    {
+      "Start": "fe8ef72d968e40b49477e251dd26a244",
+      "End": "ac8b7c4f2cf84cb68d1346f97925e8cf",
+      "Id": "a1a7e1dc86134506a3d279ec5e8313dd"
+    },
+    {
+      "Start": "c324ec8bb8df416a9e6ba8f903f1860b",
+      "End": "7ac21a45884748e591a4f84c3398f594",
+      "Id": "8a569f15d1884da3b6f05737998f0a75"
+    },
+    {
+      "Start": "224d19f40d82402899265ca40419a8b2",
+      "End": "f1ac6d6b7c37410b9d2d02e6ba994ecb",
+      "Id": "178f75fcbbc446e4bdd2d8f47029c1ae"
+    },
+    {
+      "Start": "1c47636e9a5f42548c5d5a64e847be0d",
+      "End": "31eec2d01b3243b3b96fe3aa2ed061e5",
+      "Id": "842db809756a4d9fb9de8a2e5eb5c3b6"
+    },
+    {
+      "Start": "7ebed00a55b9416ea1483e5d28eb0702",
+      "End": "e68aaacb3dd642e0b6ee039d0aebde23",
+      "Id": "984840262f1143db9f1c4b769358d175"
+    },
+    {
+      "Start": "1e95738ca5084f7a8d9a3a15354d4268",
+      "End": "76fac46fc9c04b03ab386b476fac642d",
+      "Id": "640e15ac0afe4a309985366a92f8ba9a"
     }
   ],
   "Dependencies": [],
   "NodeLibraryDependencies": [],
+  "Thumbnail": null,
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "Keine",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.10.1.3976",
+      "Version": "2.12.0.5650",
       "RunType": "Automatic",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "Background Preview",
+      "Name": "Hintergrundvorschau",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -667,8 +996,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -5494.9850463435105,
-        "Y": -1480.3165439146728
+        "X": -6483.2758141278127,
+        "Y": -1891.1789979373607
       },
       {
         "ShowGeometry": true,
@@ -677,8 +1006,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -5791.2552299471909,
-        "Y": -1480.3165439146728
+        "X": -6779.5459977314931,
+        "Y": -1891.1789979373607
       },
       {
         "ShowGeometry": true,
@@ -687,8 +1016,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -5313.06377456817,
-        "Y": -1705.87130945455
+        "X": -6301.354542352472,
+        "Y": -2116.733763477238
       },
       {
         "ShowGeometry": true,
@@ -697,8 +1026,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -5020.21928515477,
-        "Y": -1705.87130945455
+        "X": -6008.510052939072,
+        "Y": -2116.733763477238
       },
       {
         "ShowGeometry": true,
@@ -707,8 +1036,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -4876.44676772384,
-        "Y": -1705.87130945455
+        "X": -5864.7375355081422,
+        "Y": -2116.733763477238
       },
       {
         "ShowGeometry": true,
@@ -717,8 +1046,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -4692.20992889715,
-        "Y": -1705.87130945455
+        "X": -5680.5006966814526,
+        "Y": -2116.733763477238
       },
       {
         "ShowGeometry": true,
@@ -727,8 +1056,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -4375.03794015102,
-        "Y": -1705.87130945455
+        "X": -5363.3287079353222,
+        "Y": -2116.733763477238
       },
       {
         "ShowGeometry": true,
@@ -737,23 +1066,103 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -6045.2892506437,
-        "Y": -1705.87130945455
+        "X": -6879.5883924607606,
+        "Y": -2116.7337634772375
       },
       {
         "ShowGeometry": true,
-        "Name": "Python Script",
+        "Name": "All Views without Schedules",
         "Id": "29e852bd4cdc41ada7f6932be7fc9457",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -6332.58672586807,
-        "Y": -1705.87130945455
+        "X": -7297.6078190951366,
+        "Y": -2122.3361328233809
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Schedules",
+        "Id": "c0e54f5df94745939bfcfa60a7c2c918",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6722.62868406228,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "b29669959e38444ab335152e3b5c4ea3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5590.67093335612,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.CountFalse",
+        "Id": "aff6fbef02344015a79f0bdc56a20413",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5273.49894460999,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "72adb76e1494493d828ed015385bf1b7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5774.90777218281,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Clean",
+        "Id": "2665ded109844032b0538c5755ad0d88",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5918.68028961374,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "3364269595b140e89771a7dd50a63d36",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6211.52477902714,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "c238a752efcb4df99be016780b33537d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6541.19366467624,
+        "Y": -1521.39232470479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "+",
+        "Id": "bd7b5f33bdcc49fd9df374a9c9325666",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -4400.5879974483669,
+        "Y": -1706.2091188526852
       }
     ],
     "Annotations": [],
-    "X": 3977.8514342919566,
-    "Y": 1982.50236776054,
-    "Zoom": 0.95235598689047352
+    "X": 3094.6413484911163,
+    "Y": 1393.5636258816264,
+    "Zoom": 0.71131819830355236
   }
 }
